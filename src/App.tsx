@@ -7,11 +7,8 @@ export default function App() {
   return (
     <>
       <Menu />
-
       <Hero />
-
       <Main />
-
       <Footer />
     </>
   );
