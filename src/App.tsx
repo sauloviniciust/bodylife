@@ -6,19 +6,14 @@ import { Main } from "./components/Main";
 export default function App() {
   return (
     <>
-      <div>
-        <Menu />
-      </div>
-      <div>
-        <Hero />
-      </div>
-      <div>
-        <Main />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <Menu />
+
+      <Hero />
+
+      <Main />
+
+      <Footer />
     </>
   );
 }
-export {App};
+export { App };
