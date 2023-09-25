@@ -1,3 +1,5 @@
+import { Carousel } from "./../Carousel";
+
 const Hero = () => {
   return (
     <>
@@ -19,11 +21,7 @@ const Hero = () => {
               </a>
             </div>
             <div className="mb-10 md:w-1/2">
-              <img
-                src="https://static3.tcdn.com.br/img/img_prod/311840/180_jaqueta_barcelona_azul_e_vermelha_118279_1_92ef305bc58cd4465f9d3758bf1ea3e4.jpg"
-                alt="Hero Image"
-                className="rounded-lg shadow-lg"
-              />
+             <Carousel/>
             </div>
           </div>
         </div>

@@ -1,9 +1,13 @@
 import { ShoppingCart, User, Search  } from 'lucide-react';
 
+
 const Menu = () => {
-    return (
-        <div className="">
-    <nav id="navbar" className="w-full fixed top-0 z-20 bg-transparent transition duration-500 ease-in-out">
+  return (
+    <div className="">
+      <nav
+        id="navbar"
+        className="w-full fixed top-0 z-20 bg-transparent transition duration-500 ease-in-out"
+      >
   <div className="flex items-center font-sans bg-zinc-950 shadow-zinc-900 shadow-2xl hover:shadow-zinc-700 hover:shadow-lg">
     
     <div className="ml-6">
