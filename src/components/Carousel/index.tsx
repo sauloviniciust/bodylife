@@ -37,7 +37,7 @@ const Carousel: React.FC = () => {
       <img
         src={images[currentImage]}
         alt={`Clothing ${currentImage + 1}`}
-        className="carousel-image w-96 "
+        className="carousel-image w-96"
       />
       <button onClick={nextImage}>&gt;</button>
     </div>
