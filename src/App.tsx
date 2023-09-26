@@ -9,7 +9,6 @@ export default function App() {
       <Menu />
       <Hero />
       <Main />
-      
       <Footer />
     </>
   );
