@@ -1,3 +1,4 @@
+import { Button } from "../Buttons";
 import { Carousel } from "./../Carousel";
 
 const Hero = () => {
@@ -13,12 +14,7 @@ const Hero = () => {
               <p className="text-zinc-300 mt-2">
                 confira estas novidades, e corre por que acaba logo...
               </p>
-              <a
-                href="#"
-                className="mt-2 bg-zinc-950 hover:bg-zinc-600 text-zinc-200  font-semibold py-2 px-4 rounded hover:text-black inline-block"
-              >
-                Compre agora
-              </a>
+             <a href="#" className=""><Button children="Compre" /></a>
             </div>
             <div className="mb-10 md:w-1/2">
              <Carousel/>
