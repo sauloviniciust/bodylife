@@ -1,13 +1,32 @@
-
+import { useEffect, useState } from 'react';
 import { ShoppingCart, User, Search } from 'lucide-react';
-import { isScrolled } from '../Efect';
+
 
 const Menu = () => {
- 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    // Check the scroll position
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
   return (
     <div>
-      <nav>
+    
         <div className={`flex items-center font-sans
          shadow-zinc-900 shadow-2xl hover:shadow-zinc-700 hover:shadow-lg  
          w-full fixed top-0 z-20 transition duration-1000 ease-in-out ${
@@ -72,7 +91,7 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-      </nav>
+     
     </div>
   );
 };
