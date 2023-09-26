@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 
 const images = [
   "img1.jpg",
@@ -31,15 +33,15 @@ const Carousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex animate-carousel gap-4 w-full overflow-x-auto pb-6 pt-1">
-      <button onClick={prevImage}>&lt;</button>
+    <div className="flex animate-carousel w-full pb-6 pt-1">
+      <button className="text-white animate-pulse" onClick={prevImage}><ChevronLeft /></button>
       
       <img
         src={images[currentImage]}
         alt={`Clothing ${currentImage + 1}`}
-        className="carousel-image w-96"
+        className="carousel-image w-96 h-96"
       />
-      <button onClick={nextImage}>&gt;</button>
+      <button className="text-white animate-pulse" onClick={nextImage}><ChevronRight /></button>
     </div>
   );
 };
