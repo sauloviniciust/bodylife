@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ShoppingCart, User, Search } from 'lucide-react';
+import { Chart } from '../Counter/chartCount';
 
 
 
@@ -88,7 +89,7 @@ const Menu = () => {
               </li>
               <li>
                 <a className="flex text-2xl hover:text-slate-600" href="#cart">
-                  <ShoppingCart />
+                  <ShoppingCart /> <Chart/>
                 </a>
               </li>
               
