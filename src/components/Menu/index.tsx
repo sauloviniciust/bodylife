@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ShoppingCart, User, Search } from 'lucide-react';
+import { Counter } from './../Counter';
 
 
 const Menu = () => {
@@ -44,6 +45,7 @@ const Menu = () => {
             </a>
           </div>
           <div className="flex-grow hidden md:block">
+          
             <ul className="flex space-x-10 text-white justify-center ">
               <li>
                 <a className="  text-2xl hover:text-slate-600" href=".#">
@@ -84,10 +86,11 @@ const Menu = () => {
                 </a>
               </li>
               <li>
-                <a className=" text-2xl hover:text-slate-600" href="#cart">
-                  <ShoppingCart />
+                <a className="flex text-2xl hover:text-slate-600" href="#cart">
+                  <ShoppingCart /> <Counter/>
                 </a>
               </li>
+              
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Button } from "../Buttons";
+import { Counter } from "../Counter";
 
 const Main = () => {
   return (
@@ -21,7 +22,7 @@ const Main = () => {
                   Slider colcci em varias cores, super confortavel </p>
                 <div className="mt-4">
                   <span className="text-black font-bold mr-4">R$ 139,90</span>
-                  <a href="#"><Button children="Compre" /></a>
+                  <a href="#"><Button children="Adicionar" /></a>
                 </div>
               </div>
             </div>
@@ -36,7 +37,7 @@ const Main = () => {
                 <div className="p-4">
                  <h3 className="text-xl font-bold text-black mb-2">Sandália colcci</h3>
                   <p className="text-zinc-300 font-bold">
-                   Sandalia Colcci estampada, combina com a maioria dos looks</p>
+                  <Counter/></p>
                 <div className="mt-4">
                   <span className="text-black font-bold mr-4">R$ 99.90</span>
                   <a href="#"><Button children="Compre" /></a>
