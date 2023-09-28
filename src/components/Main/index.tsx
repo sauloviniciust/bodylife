@@ -18,10 +18,10 @@ const Main = () => {
                 <div className="p-4">
                  <h3 className="text-xl font-bold text-black mb-2">Slider colcci</h3>
                   <p className="text-zinc-300 font-bold">
-                  Slider colcci em varias cores</p>
+                  Slider colcci em varias cores, super confortavel </p>
                 <div className="mt-4">
-                  <span className="text-black font-bold">R$ 139,90</span>
-                  <a href="#" className="ml-4"><Button children="Compre" /></a>
+                  <span className="text-black font-bold mr-4">R$ 139,90</span>
+                  <a href="#"><Button children="Compre" /></a>
                 </div>
               </div>
             </div>
@@ -36,10 +36,10 @@ const Main = () => {
                 <div className="p-4">
                  <h3 className="text-xl font-bold text-black mb-2">Sandália colcci</h3>
                   <p className="text-zinc-300 font-bold">
-                   Sandalia Colcci estampada</p>
+                   Sandalia Colcci estampada, combina com a maioria dos looks</p>
                 <div className="mt-4">
-                  <span className="text-black font-bold">R$ 99.90</span>
-                  <a href="#" className="ml-4"><Button children="Compre" /></a>
+                  <span className="text-black font-bold mr-4">R$ 99.90</span>
+                  <a href="#"><Button children="Compre" /></a>
                 </div>
               </div>
             </div>
@@ -53,11 +53,11 @@ const Main = () => {
                 className="w-full"/>
                 <div className="p-4">
                  <h3 className="text-xl font-bold text-black mb-2">Vestido Colcci Fitness</h3>
-                  <p className="text-zinc-300 font-bold">
+                  <p className="text-zinc-300 font-bold ">
                    Vestidos colcci em varias cores e tecido super leve</p>
                 <div className="mt-4">
-                  <span className="text-black font-bold">R$ 169.90</span>
-                  <a href="#" className="ml-4"><Button children="Compre" /></a>
+                  <span className="text-black font-bold mr-4">R$ 169.90</span>
+                  <a href="#"><Button children="Compre" /></a>
                 </div>
               </div>
             </div>
@@ -72,10 +72,10 @@ const Main = () => {
                 <div className="p-4">
                  <h3 className="text-xl font-bold text-black mb-2">Bolsa colcci</h3>
                   <p className="text-zinc-300 font-bold">
-                   Bolsa colcci em varias cores</p>
+                   Bolsa colcci em varias cores, para varias ocasioes </p>
                 <div className="mt-4">
-                  <span className="text-black font-bold">R$ 289.90</span>
-                  <a href="#" className="ml-4"><Button children="Compre" /></a>
+                  <span className="text-black font-bold mr-4">R$ 289.90</span>
+                  <a href="#"><Button children="Compre" /></a>
                 </div>
               </div>
             </div>
