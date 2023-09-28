@@ -10,8 +10,8 @@ function Counter () {
 
     const sub = () => {
         setCount((value) => value - 1)
+       
     }
-
 
 
     return (

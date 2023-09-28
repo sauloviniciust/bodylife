@@ -3,6 +3,7 @@ import { ShoppingCart, User, Search } from 'lucide-react';
 
 
 
+
 const Menu = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -87,7 +88,7 @@ const Menu = () => {
               </li>
               <li>
                 <a className="flex text-2xl hover:text-slate-600" href="#cart">
-                  <ShoppingCart /> 
+                  <ShoppingCart />
                 </a>
               </li>
               
