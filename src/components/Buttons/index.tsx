@@ -1,6 +1,6 @@
 
 interface IProps {
-  children: any;
+  children: string;
 }
 
 
