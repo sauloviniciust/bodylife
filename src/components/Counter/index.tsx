@@ -5,13 +5,16 @@ function Counter () {
     const [count, setCount] = useState<number>(0);
 
     const add = () => {
+        if(count < 5 ){
         setCount((value) => value + 1)
     }
+}
 
     const sub = () => {
+        if(count > 0 ){
         setCount((value) => value - 1)
        
-    }
+    }}
 
 
     return (
