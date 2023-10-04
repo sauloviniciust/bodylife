@@ -9,7 +9,7 @@ function Chart () {
 
 
     return (
-        <div className="">
+        <div>
                
                 <h1  className=" text-yellow-400 text-sm ">{count}</h1>
           

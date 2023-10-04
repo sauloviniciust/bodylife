@@ -1,29 +1,44 @@
-
+import { useEffect, useState } from "react";
 import { Card } from "../Card";
+import { cardsData } from "../cardsData/CardsData";
 
 
 const Main = () => {
-  const imagem1 = (<img src="Slider colcci.jpg"alt="Slider colcci em varias cores, super confortavel"/>);
-  const imagem2 = (<img src="Sandália colcci.jpg"alt="Sandalia colcci em varias cores, super confortavel"/>);
-  const imagem3 = (<img src="VESTIDO COLCCI FITNESS.jpg"alt="Vestidos colcci em varias cores e tecido super leve"/>);
-  const imagem4 = (<img src="bolsa colcci.jpg"alt="Bolsa colcci em varias cores, para varias ocasioes"/>);
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulando um atraso de 2 segundos
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId); // Limpar o timeout se o componente for desmontado antes do atraso terminar
+    };
+  }, []);
+
+  
+  
   return (
-  
-       <section className="bg-zinc-800 py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-zinc-200 mb-6">Produtos</h2>
+    <section className="bg-zinc-800 py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-zinc-200 mb-6">Produtos</h2>
+        {isLoading ? (
+  <div className="flex justify-center items-center h-64">
+    <div className="relative h-10 w-10">
+      <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-200 opacity-75"></div>
+      <div className="relative inline-flex rounded-full h-10 w-10 bg-zinc-800"></div>
+    </div>
+  </div>
+        ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-          <Card image={imagem1} product="Slider colcci" about="Slider colcci em varias cores, super confortavel" price="R$ 139,90"/>
-          <Card image={imagem2} product="Sandália colcci" about="Sandalia colcci em varias cores, super confortavel" price="R$ 99.90"/>
-          <Card image={imagem3} product="Vestido Colcci Fitness" about="Vestidos colcci em varias cores e tecido super leve" price="R$ 169.90"/>
-          <Card image={imagem4} product="Bolsa colcci" about="Bolsa colcci em varias cores, para varias ocasioes" price="R$ 289.90"/>
-         
+            {cardsData.map((card, index) => (
+              <Card key={index} {...card} />
+            ))}
           </div>
-        </div>
-      </section> 
-  
+        )}
+      </div>
+    </section>
   );
 };
 
