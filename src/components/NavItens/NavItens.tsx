@@ -1,7 +1,4 @@
-
-export default function NavItem({ href, children}) {
-  
-  
+export default function NavItem({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
       <a
@@ -11,5 +8,5 @@ export default function NavItem({ href, children}) {
         {children}
       </a>
     </li>
-  )
+  );
 }
