@@ -26,7 +26,7 @@ const Menu = () => {
   return (
     <div>
       <div
-        className={`flex items-center font-sans
+        className={`flex text-white items-center font-sans
          shadow-zinc-900 shadow-2xl hover:shadow-zinc-700 hover:shadow-lg  
          w-full fixed top-0 z-20 transition duration-1000 ease-in-out ${
            isScrolled ? "bg-black" : "bg-transparent"
@@ -37,7 +37,7 @@ const Menu = () => {
         </div>
         
         <div className="flex-grow hidden md:block">
-          <ul className="flex space-x-10 text-white justify-center ">
+          <ul className="flex space-x-10 justify-center ">
             <li><NavItem href=".#" children="Novidades"/></li>
             <li><NavItem href=".#" children="Masculino"/></li>
             <li><NavItem href=".#" children="Feminino"/></li>
@@ -46,7 +46,7 @@ const Menu = () => {
         </div>
 
         <div>
-          <ul className="flex space-x-2 text-white mr-6">
+          <ul className="flex space-x-2 mr-6">
             <li><NavItem href=".#" children={ <Search />}/></li>
             <li><NavItem href=".#" children={ <User />}/></li>
             <li>

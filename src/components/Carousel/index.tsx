@@ -1,49 +1,61 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState,  } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { RxDotFilled } from 'react-icons/rx';
 
+function Carousel() {
+  const slides = [
+    "img1.jpg",
+    "img2.jpg",
+    "img3.jpg",
+    "img4.jpg",
+  ];
 
-const images = [
-  "img1.jpg",
-  "img2.jpg",
-  "img3.jpg",
-  "img4.jpg",
- 
-  // Add more image paths as needed
-];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Carousel: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
 
-  // Auto slide every 3 seconds (adjust the interval as needed)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextImage();
-    }, 3000);
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []);
+  const goToSlide = (slideIndex: React.SetStateAction<number>) => {
+    setCurrentIndex(slideIndex);
+  };
 
   return (
-    <div className="flex animate-carousel w-full pb-6 pt-1">
-      <button className="text-white animate-pulse" onClick={prevImage}><ChevronLeft /></button>
-      
-      <img
-        src={images[currentImage]}
-        alt={`Clothing ${currentImage + 1}`}
-        className="carousel-image w-96 h-96"
-      />
-      <button className="text-white animate-pulse" onClick={nextImage}><ChevronRight /></button>
+    <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex]})` }}
+        className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
+      ></div>
+      {/* Left Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div>
+      {/* Right Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div>
+      <div className='flex top-4 justify-center py-2'>
+        {slides.map((_slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className='text-2xl cursor-pointer'
+          >
+            <RxDotFilled />
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
+}
+
 
 export {Carousel};
