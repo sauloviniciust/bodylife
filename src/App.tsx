@@ -1,14 +1,13 @@
 import { Menu } from "./components/Menu";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import { Main } from "./components/Main";
+import { Outlet } from "react-router";
+
 
 export default function App() {
   return (
     <>
       <Menu />
-      <Hero />
-      <Main />
+      <Outlet />
       <Footer />
     </>
   );

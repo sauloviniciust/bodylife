@@ -3,7 +3,7 @@ import { Main } from "../../components/Main"
 
 
 
-const Home = () => {
+const Contact = () => {
     return(
     <>
     <Hero />
@@ -12,4 +12,4 @@ const Home = () => {
     )
 }
 
-export {Home}
+export {Contact}

@@ -33,12 +33,12 @@ const Menu = () => {
          }`}
       >
         <div className="ml-6">
-          <a href="#">{bodyLifeLogo}</a>
+          <a href="home">{bodyLifeLogo}</a>
         </div>
         
         <div className="flex-grow hidden md:block">
           <ul className="flex space-x-10 justify-center ">
-            <li><NavItem href=".#" children="Novidades"/></li>
+            <li><NavItem href="#novidades" children="Novidades"/></li>
             <li><NavItem href=".#" children="Masculino"/></li>
             <li><NavItem href=".#" children="Feminino"/></li>
             <li><NavItem href=".#" children="Promoções"/></li>
