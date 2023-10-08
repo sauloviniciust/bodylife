@@ -7,6 +7,8 @@ const cardsData = [
     product: "Slider colcci",
     about: "Slider colcci em varias cores, super confortavel",
     price: "R$ 139,90",
+    src: "Slider colcci.jpg"
+  
   },
   {
     image: <img
@@ -16,6 +18,7 @@ const cardsData = [
     product: "Sandália colcci",
     about: "Sandalia colcci em varias cores, super confortavel",
     price: "R$ 99.90",
+    src: "Sandália colcci.jpg"
   },
   {
     image: <img
@@ -25,6 +28,7 @@ const cardsData = [
     product: "Vestido Colcci Fitness",
     about: "Vestidos colcci em varias cores e tecido super leve",
     price: "R$ 169.90",
+    src: "VESTIDO COLCCI FITNESS.jpg"
   },
   {
     image: <img
@@ -34,6 +38,7 @@ const cardsData = [
     product: "Bolsa colcci",
     about: "Bolsa colcci em varias cores, para varias ocasioes",
     price: "R$ 289.90",
+    src: "bolsa colcci.png"
   },
 ];
 

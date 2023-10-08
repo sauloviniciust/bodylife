@@ -4,16 +4,16 @@ import { Component } from "react";
 
 
 class Item extends Component<{
-  image: any;
   product: string;
   about: string;
   price: string;
+  src:string
 }> {
   render() {
     return (
         <div className="flex font-sans my-40 mx-20">
         <div className="flex-none w-48 relative">
-        {this.props.image} <img src="/classNameic-utility-jacket.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+         <img src={this.props.src} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">
