@@ -18,13 +18,13 @@ class Item extends Component<{
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">
             <h1 className="flex-auto text-lg font-semibold text-slate-900">
-            {this.props.product}Produto
+            {this.props.product}
             </h1>
             <div className="text-lg font-semibold text-slate-500">
-            {this.props.price}R$00
+            {this.props.price}
             </div>
             <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-            {this.props.about}Sobre
+            {this.props.about}
             </div>
           </div>
           <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">

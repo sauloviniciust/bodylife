@@ -33,7 +33,7 @@ const Menu = () => {
          }`}
       >
         <div className="ml-6">
-          <a href="home">{bodyLifeLogo}</a>
+          <a href="/">{bodyLifeLogo}</a>
         </div>
         
         <div className="flex-grow hidden md:block">

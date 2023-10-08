@@ -3,6 +3,10 @@ import { Button } from "../Buttons";
 import { Counter } from "../Counter";
 
 class Card extends Component<{
+
+
+  
+
   image: any;
   product: string;
   about: string;
