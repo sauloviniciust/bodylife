@@ -9,15 +9,15 @@ export const ItemPage = () => {
   const product = queryParams.get("product");
   const about = queryParams.get("about");
   const price = queryParams.get("price");
+  const alt = queryParams.get("alt");
 
-if (product !== null && src !== null && about !== null && price !== null) {
+if (product !== null && src !== null && about !== null && price !== null&& alt !== null) {
   return (
     <Item
       product={product}
       src={src}
       about={about}
-      price={price}
-    />
+      price={price} alt={alt}    />
   );
 } else {
   return <p>One or more variables are null.</p>;
