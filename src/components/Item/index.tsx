@@ -1,19 +1,46 @@
-
 import { Component } from "react";
-
-
+import { LoadingPage } from "../../Pages/Loading";
 
 class Item extends Component<{
+  alt: string;
   product: string;
   about: string;
   price: string;
   src: string;
 }> {
+  constructor(props: {
+    alt: string;
+    product: string;
+    about: string;
+    price: string;
+    src: string;
+  }) {
+    super(props);
+    this.state = {
+      isLoading: true,
+    };
+  }
+
+  componentDidMount() {
+   
+    setTimeout(() => {
+      this.setState({ isLoading: false }); 
+    }, 2000);
+  }
+
   render() {
+    
+    if (this.state.isLoading) {
+      return  <LoadingPage/>
+    }
+
+ 
     return (
+    
+
         <div className="flex font-sans my-40 mx-20">
         <div className="flex-none w-48 relative">
-         <img src={this.props.src} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+         <img src={this.props.src} alt={this.props.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">

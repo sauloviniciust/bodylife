@@ -14,12 +14,14 @@ class Card extends Component<{
 }> {
   render() {
     return (
+      
       <section
-        className="bg-zinc-700 rounded-lg shadow-black hover:bg-zinc-800 
+   
+              className="bg-zinc-700 rounded-lg shadow-black hover:bg-zinc-800 
                     border-zinc-600 scale-75 md:scale-90 lg:scale-90 xl:scale-100 
                     transition overflow-hidden ease-in-out delay-100 text-center 
                     z-10 transform hover:scale-105 border-2 shadow-2xl h-42">
-
+  
         <div>{this.props.image}</div>
 
           <div className="p-4">

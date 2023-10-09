@@ -4,7 +4,7 @@ import { Carousel } from "./../Carousel";
 const Hero = () => {
   return (
     <>
-      <section id="novidades" className="mt-36 bg shadow-zinc-900 shadow-2xl">
+      <section id="novidades" className="mt-20 bg shadow-zinc-900 shadow-2xl">
        
           <div className="container my-10 mx-auto flex flex-col md:flex-row items-center justify-between">
             

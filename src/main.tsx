@@ -7,6 +7,7 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {  ItemPage } from './Pages/Item/index.tsx'
 import { Home } from './Pages/Home/index.tsx'
+import { LoadingPage } from './Pages/Loading/index.tsx'
 
 
 
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
       {
         path: "item",
         element: <ItemPage/>
+      },
+      {
+        path: "loading",
+        element: <LoadingPage/>
       }
+
 
     ],
   },
