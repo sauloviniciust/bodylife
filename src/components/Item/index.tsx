@@ -1,13 +1,17 @@
 import { Component } from "react";
 import { LoadingPage } from "../../Pages/Loading";
 
+interface ItemState {
+  isLoading: boolean;
+}
+
 class Item extends Component<{
   alt: string;
   product: string;
   about: string;
   price: string;
   src: string;
-}> {
+}, ItemState> {
   constructor(props: {
     alt: string;
     product: string;
@@ -22,17 +26,16 @@ class Item extends Component<{
   }
 
   componentDidMount() {
-   
     setTimeout(() => {
-      this.setState({ isLoading: false }); 
+      this.setState({ isLoading: false });
     }, 2000);
   }
 
   render() {
-    
     if (this.state.isLoading) {
-      return  <LoadingPage/>
+      return <LoadingPage />;
     }
+
 
  
     return (
