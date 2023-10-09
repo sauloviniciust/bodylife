@@ -3,7 +3,7 @@ import { Main } from "../../components/Main"
 
 
 
-export const Home = () => {
+ const Home = () => {
     return(
     <>
     <Hero />
@@ -12,3 +12,4 @@ export const Home = () => {
     )
 }
 
+export { Home }

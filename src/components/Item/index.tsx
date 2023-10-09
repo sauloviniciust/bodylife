@@ -7,7 +7,7 @@ class Item extends Component<{
   product: string;
   about: string;
   price: string;
-  src:string
+  src: string;
 }> {
   render() {
     return (
