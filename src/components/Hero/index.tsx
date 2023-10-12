@@ -15,7 +15,7 @@ const Hero = () => {
               <p className="text-xl text-zinc-300 mt-2">
                 confira estas novidades, e corre por que acaba logo...
               </p>
-             <a href="#" className="text-xl"><Button children="Confira" /></a>
+             <a href="/novidades" className="text-xl"><Button children="Confira" /></a>
             </div>
             
             <div className="mb-10 md:w-1/2">
