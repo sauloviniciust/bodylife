@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { LoadingPage } from "../../Pages/Loading";
+import Checked from "../StylePresset/Checked";
 
 interface ItemState {
   isLoading: boolean;
@@ -36,58 +37,46 @@ class Item extends Component<{
       return <LoadingPage />;
     }
 
-
- 
     return (
     
-
         <div className="flex font-sans my-40 mx-20">
-        <div className="flex-none w-48 relative">
+        <div className="hover:scale-125 flex-none w-48 relative border-2 border-zinc-800 shadow-black shadow-xl ">
          <img src={this.props.src} alt={this.props.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">
-            <h1 className="flex-auto text-lg font-semibold text-slate-900">
+            <h1 className="flex-auto text-lg font-semibold text-zinc-200">
             {this.props.product}
             </h1>
-            <div className="text-lg font-semibold text-slate-500">
+            <div className="text-lg font-semibold text-zinc-100">
             {this.props.price}
             </div>
-            <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
+            <div className="w-full flex-none text-sm font-medium text-zinc-100 mt-2">
             {this.props.about}
             </div>
           </div>
           <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-            <div className="space-x-2 flex text-sm">
+            <div className="space-x-2 flex text-sm list-none ">
               <label>
-                <input className="sr-only peer" name="size" type="radio" value="xs" checked />
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                  XS
-                </div>
+                <input className="sr-only peer" name="size" type="radio" value="xs" checked/>
+                <Checked children="XS"/>
+                
               </label>
               <label>
                 <input className="sr-only peer" name="size" type="radio" value="s" />
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                  S
-                </div>
+                <Checked children="S"/>
               </label>
               <label>
                 <input className="sr-only peer" name="size" type="radio" value="m" />
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                  M
-                </div>
+                <Checked children="M"/>
               </label>
               <label>
-                <input className="sr-only peer" name="size" type="radio" value="l" />
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                  L
-                </div>
+                <input className="sr-only peer " name="size" type="radio" value="l" />
+                <Checked children="L"/>
               </label>
               <label>
                 <input className="sr-only peer" name="size" type="radio" value="xl" />
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                  XL
-                </div>
+                <Checked children="XL"/>
               </label>
             </div>
           </div>
@@ -96,7 +85,7 @@ class Item extends Component<{
               <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
                 Buy now
               </button>
-              <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+              <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-zinc-200" type="button">
                 Add to bag
               </button>
             </div>
@@ -106,7 +95,7 @@ class Item extends Component<{
               </svg>
             </button>
           </div>
-          <p className="text-sm text-slate-700">
+          <p className="text-sm text-zinc-100">
             Envios para todo pais(favor consultar o frete).
           </p>
         </form>

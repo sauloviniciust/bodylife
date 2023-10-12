@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
-import { Card } from "../CardFilter";
 import { cardsData } from "../cardsData/CardsData";
 import { Link } from "react-router-dom";
-import { Loading } from "./../Loading";
+import { Loading } from "../Loading";
 import { LoadingPage } from "../../Pages/Loading";
+import { Acessorio } from "../CardFilter/Acessorio";
 
-const Main = () => {
+const Acessorios = () => {
   const [isLoading, setIsLoading] = useState(true);
-
-  
-  
-
-  useEffect(() => {
+ 
+useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -21,11 +18,9 @@ const Main = () => {
     };
   }, []);
 
-
-
-  return (
-    <section className="bg-zinc-800 py-12 mt-14">
-      <div className="container mx-auto px-4">
+return (
+  <section className="bg-zinc-800 py-12 mt-14">
+    <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold text-zinc-200 mb-6"></h2>
         {isLoading ? (
           <Loading/>
@@ -44,14 +39,14 @@ const Main = () => {
                {isLoading ? (
           <LoadingPage/>
         ) : ( 
-                <Card {...card} />)}
+                <Acessorio {...card} />)}
               </Link>
             ))}
           </div>
         )}
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+    );
+  };
 
-export { Main };
+export { Acessorios };

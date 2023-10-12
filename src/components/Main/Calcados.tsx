@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Card } from "../CardFilter";
 import { cardsData } from "../cardsData/CardsData";
 import { Link } from "react-router-dom";
-import { Loading } from "./../Loading";
+import { Loading } from "../Loading";
 import { LoadingPage } from "../../Pages/Loading";
+import { Calcado } from "../CardFilter/Calcado";
 
-const Main = () => {
+const Calcados = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   
@@ -44,7 +44,7 @@ const Main = () => {
                {isLoading ? (
           <LoadingPage/>
         ) : ( 
-                <Card {...card} />)}
+                <Calcado {...card} />)}
               </Link>
             ))}
           </div>
@@ -54,4 +54,4 @@ const Main = () => {
   );
 };
 
-export { Main };
+export { Calcados };

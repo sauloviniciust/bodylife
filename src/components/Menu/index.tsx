@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { ShoppingCart, User, Search } from "lucide-react";
 import { Chart } from "../Counter/chartCount";
 import { bodyLifeLogo } from "../Constants";
-import NavItem from "../NavItens/NavItens";
+import NavItem from "../StylePresset/NavItens";
+
 
 const Menu = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,10 +39,10 @@ const Menu = () => {
         
         <div className="flex-grow hidden md:block">
           <ul className="flex space-x-10 justify-center ">
-            <li><NavItem href="#novidades" children="Novidades"/></li>
-            <li><NavItem href=".#" children="Masculino"/></li>
-            <li><NavItem href=".#" children="Feminino"/></li>
-            <li><NavItem href=".#" children="Promoções"/></li>
+            <li><NavItem href="/novidades" children="Novidades"/></li>
+            <li><NavItem href="/roupas" children="Roupas"/></li>
+            <li><NavItem href="/calcados" children="Calçados"/></li>
+            <li><NavItem href="/acessorios" children="Acessorios"/></li>
           </ul>
         </div>
 
