@@ -16,7 +16,6 @@ function Counter () {
        
     }}
 
-
     return (
         <div className="flex justify-center">
             <div className="flex justify-center w-20 gap-5 rounded-2xl hover:bg-zinc-700">
@@ -27,7 +26,5 @@ function Counter () {
        </div>
     )
 }
-
-
 
 export { Counter }
