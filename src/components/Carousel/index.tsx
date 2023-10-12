@@ -26,10 +26,10 @@ function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); 
+    }, 3000);
 
     return () => {
-      clearInterval(interval); 
+      clearInterval(interval);
     };
   }, [currentIndex]);
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ShoppingCart, User, Search } from "lucide-react";
+import { ShoppingCart, User, Search, MenuIcon } from "lucide-react";
 import { Chart } from "../Counter/chartCount";
 import { bodyLifeLogo } from "../Constants";
 import NavItem from "../StylePresset/NavItens";
@@ -27,13 +27,13 @@ const Menu = () => {
   return (
     <div>
       <div
-        className={`flex text-white items-center font-sans
+        className={`flex place-content-between items-center text-white font-sans
          shadow-zinc-900 shadow-2xl hover:shadow-zinc-700 hover:shadow-lg  
          w-full fixed top-0 z-20 transition duration-1000 ease-in-out ${
            isScrolled ? "bg-black" : "bg-transparent"
          }`}
       >
-        <div className="ml-6">
+        <div className="mx-auto">
           <a href="/">{bodyLifeLogo}</a>
         </div>
         
@@ -46,8 +46,8 @@ const Menu = () => {
           </ul>
         </div>
 
-        <div>
-          <ul className="flex space-x-2 mr-6">
+        <div className=" hidden md:block">
+          <ul className="flex space-x-2 mr-6 ">
             <li><NavItem href=".#" children={ <Search />}/></li>
             <li><NavItem href=".#" children={ <User />}/></li>
             <li>
@@ -57,6 +57,10 @@ const Menu = () => {
             </li>
           </ul>
         </div>
+        <div className="block md:hidden text-white py-2 mr-4">
+        <a href="/"> <MenuIcon /></a>
+      </div>
+    
 
       </div>
     </div>

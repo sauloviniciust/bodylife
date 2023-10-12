@@ -74,7 +74,7 @@ const cardsData = [
   },
   {
     image: <img
-    src="Garrafa dobravel LIVE.jpg"
+    src="Garrafa dobravel LIVE.png"
     alt="Imagem de garraga dobravel live "
   />,
     product: "Garrafa dobravel LIVE",

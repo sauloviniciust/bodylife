@@ -15,7 +15,6 @@ class Roupa extends Component<{
       return null; 
     }
 
-    
       return (
         <section
           className="bg-zinc-700 rounded-lg shadow-black hover:bg-zinc-800 

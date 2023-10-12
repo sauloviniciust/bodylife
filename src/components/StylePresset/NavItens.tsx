@@ -3,7 +3,7 @@ export default function NavItem({ href, children }: { href: string; children: Re
     <li>
       <a
         href={href}
-        className={`text-2xl hover:text-slate-600`}
+        className={`text-xl lg:text-2xl hover:text-slate-600`}
       >
         {children}
       </a>
