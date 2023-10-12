@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
@@ -19,17 +19,17 @@ function Carousel() {
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: SetStateAction<number>) => {
     setCurrentIndex(slideIndex);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 2000); // Change the slide every 2 seconds
+    }, 3000); 
 
     return () => {
-      clearInterval(interval); // Clean up the interval when the component unmounts
+      clearInterval(interval); 
     };
   }, [currentIndex]);
 
