@@ -13,6 +13,7 @@ import { Utilidades } from './Pages/Acessorios/index.tsx'
 import { Calcado,  } from './Pages/Calçado/index.tsx'
 import { Novidades } from './Pages/Novidades/index.tsx'
 import { Wear } from './Pages/Roupa/index.tsx'
+import { MenuMoba } from './Pages/Mobile/index.tsx'
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "novidades",
         element: <Novidades/>
+      },
+      {
+        path: "menumobile",
+        element: <MenuMoba/>
       },
 
 

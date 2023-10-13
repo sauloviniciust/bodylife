@@ -58,7 +58,7 @@ const Menu = () => {
           </ul>
         </div>
         <div className="block md:hidden text-white py-2 mr-4">
-        <a href="/"> <MenuIcon /></a>
+        <a href="menumobile"> <MenuIcon /></a>
       </div>
     
 
