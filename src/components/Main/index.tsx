@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "../CardFilter";
 import { cardsData } from "../cardsData/CardsData";
-import { Link } from "react-router-dom";
 import { Loading } from "./../Loading";
-import { LoadingPage } from "../../Pages/Loading";
 
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,22 +29,9 @@ const Main = () => {
           <Loading/>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {cardsData.map((card, index) => (
-              <Link 
-                key={index}
-                to={`/item?src=${card.src}
-                    &product=${card.product}
-                    &about=${card.about}
-                    &price=${card.price}
-                    &alt=${card.alt}
-                    &id=${card.id}`}
-              >
-               {isLoading ? (
-          <LoadingPage/>
-        ) : ( 
-                <Card {...card} />)}
-              </Link>
-            ))}
+            {cardsData.map((card) => (
+              <Card {...card} />
+              ))}
           </div>
         )}
       </div>

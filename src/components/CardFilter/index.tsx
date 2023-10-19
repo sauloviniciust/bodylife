@@ -1,12 +1,12 @@
 import { Component } from "react";
-import { Button } from "../Buttons";
 import { Counter } from "../Counter";
+import { Link } from "react-router-dom";
 
 class Card extends Component<{
 
-
-  
-
+  id: string; 
+  src: string;
+  alt: string;
   image: any;
   product: string;
   about: string;
@@ -19,19 +19,29 @@ class Card extends Component<{
         border-zinc-600 scale-75 md:scale-90 lg:scale-90 xl:scale-100 
         transition overflow-hidden ease-in-out delay-100 text-center 
         z-10 transform hover:scale-105 border-2 shadow-2xl">
-        <div className="h-96">{this.props.image}</div>
+        
+        <Link to={`/item?src=${this.props.src}
+                    &product=${this.props.product}
+                    &about=${this.props.about}
+                    &price=${this.props.price}
+                    &alt=${this.props.alt}
+                    &id=${this.props.id}`}>
+          
+          <div className="h-auto">{this.props.image}</div>
 
-          <div className="p-4 ">
-            <h3 className="text-xl font-bold text-black mb-2">{this.props.product}</h3>
+        </Link>
+        
+        <div className="flex font-bold flex-col gap-5 p-4 text-black">
 
-            <p className="text-zinc-300 font-bold">
-             {this.props.about}<Counter /></p>
+            <h3 className="text-xl">{this.props.product}</h3>
 
-            <div className="mt-4">
-              <span className="text-black font-bold mr-4">{this.props.price}</span>
+            <p className="text-zinc-300">
+             {this.props.about}</p>
 
-              <a href="#"><Button children="Adicionar" /></a>
-            </div>
+             <Counter />
+            
+            <span>{this.props.price}</span>
+
         </div>
       </section>
     );
