@@ -3,7 +3,7 @@ import { Button } from "../Buttons";
 import { Counter } from "../Counter";
 
 class Calcado extends Component<{
-  image: any;
+  image: React.ReactNode;
   product: string;
   about: string;
   price: string;
