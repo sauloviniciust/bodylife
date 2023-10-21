@@ -14,7 +14,7 @@ import { Calcado,  } from './Pages/Calçado/index.tsx'
 import { Novidades } from './Pages/Novidades/index.tsx'
 import { Wear } from './Pages/Roupa/index.tsx'
 import { MenuMoba } from './Pages/Mobile/index.tsx'
-
+import {CartProvider} from './context/cartContext.tsx'
 
 
 const router = createBrowserRouter([
@@ -63,7 +63,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <CartProvider>
     <RouterProvider router={router}/>
+    </CartProvider>
   </React.StrictMode>,
 )
 

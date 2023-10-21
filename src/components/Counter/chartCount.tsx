@@ -1,10 +1,13 @@
-import { useState } from "react";
+
+import { useCart } from "../../context/cartContext"
+
 
 function Chart () {
+    const {numero} = useCart();
 
-    const [count,] = useState<number>(0);
 
-    return <h1 className=" text-yellow-400 text-sm ">{count}</h1>
+
+    return <h1 className=" text-yellow-400 text-sm ">{numero}</h1>
         
     
 }

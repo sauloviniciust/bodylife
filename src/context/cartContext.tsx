@@ -1,29 +1,27 @@
 import { createContext, useState, useContext } from "react"
 
 interface ICart {
-    title:  string
-    setTitle: (value: string) => void
+    numero:  number
+    setNumero: (value: number) => void
 }
 
 export const CartContext = createContext<ICart>({
-    title: "",
-    setTitle: () => null,
+    numero: 0,
+    setNumero: () => null,
 });
+
 interface ICartProviderProps {
     children: React.ReactNode
 }
 
 const CartProvider = ({children}: ICartProviderProps) => {
-    const [title, setTitle] = useState<string>('');
-
-
-
+    const [numero, setNumero] = useState<number>(0);
 
 return (
     <CartContext.Provider
     value={{
-        title,
-        setTitle
+        numero,
+        setNumero
     }}
     >
         {children}
@@ -33,4 +31,6 @@ return (
 
 const useCart = () => useContext(CartContext);
 
-export { CartProvider, useCart }
+
+export  { useCart }
+export  { CartProvider}
