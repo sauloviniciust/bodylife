@@ -17,11 +17,14 @@ function Counter () {
     const sub = () => {
         if(count > 0 ){
         setCount((value) => value - 1)
+
        
     }}
 
     const handleNumber = () => {
         setNumero (numero + count)
+        setCount(0);
+       
     }
 
 
