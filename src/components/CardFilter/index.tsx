@@ -38,7 +38,7 @@ class Card extends Component<{
             <p className="text-zinc-300">
              {this.props.about}</p>
 
-             <Counter />
+            <Counter />
             
             <span>{this.props.price}</span>
 

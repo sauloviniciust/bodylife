@@ -27,15 +27,14 @@ function Counter () {
        
     }
 
-
     return (
         <div className="flex flex-col font-bold align-middle items-center mx-auto">
             <div className="flex gap-5 rounded-2xl hover:bg-zinc-700">
-                <button className="text-2xl" onClick={sub}>-</button>
-                <h1 className=" text-yellow-400 text-2xl ">{count}</h1>
-                <button className="text-2xl" onClick={add}>+</button>
+                <button className="text-2xl"onClick={sub}>-</button>
+                <h1 className="text-yellow-400 text-2xl">{count}</h1>
+                <button className="text-2xl"onClick={add}>+</button>
             </div>
-            <a href="#" onClick={handleNumber}><Button children="Adicionar" /></a>
+            <a onClick={handleNumber}><Button children="Adicionar"/></a>
        </div>
     )
 }

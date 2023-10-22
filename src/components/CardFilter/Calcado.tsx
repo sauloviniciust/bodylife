@@ -1,13 +1,16 @@
 import { Component } from "react";
 import { Button } from "../Buttons";
 import { Counter } from "../Counter";
+import { Link } from "react-router-dom";
 
 class Calcado extends Component<{
+  id: string; 
+  src: string;
+  alt: string;
   image: React.ReactNode;
   product: string;
   about: string;
   price: string;
-  id: string;
 }> {
   render() {
 
@@ -21,7 +24,14 @@ class Calcado extends Component<{
         border-zinc-600 scale-75 md:scale-90 lg:scale-90 xl:scale-100 
         transition overflow-hidden ease-in-out delay-100 text-center 
         z-10 transform hover:scale-105 border-2 shadow-2xl h-42">
-        <div>{this.props.image}</div>
+        
+        <Link to={`/item?src=${this.props.src}
+                    &product=${this.props.product}
+                    &about=${this.props.about}
+                    &price=${this.props.price}
+                    &alt=${this.props.alt}
+                    &id=${this.props.id}`}>
+        </Link>
 
           <div className="p-4">
             <h3 className="text-xl font-bold text-black mb-2">{this.props.product}</h3>
