@@ -15,6 +15,7 @@ import { Novidades } from './Pages/Novidades/index.tsx'
 import { Wear } from './Pages/Roupa/index.tsx'
 import { MenuMoba } from './Pages/Mobile/index.tsx'
 import {CartProvider} from './context/cartContext.tsx'
+import {ItemProvider} from './context/ItemContext copy.tsx'
 import { CheckoutPage } from './Pages/ChekoutPage/index.tsx'
 
 
@@ -69,7 +70,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <CartProvider>
+    <ItemProvider>
     <RouterProvider router={router}/>
+    </ItemProvider>
     </CartProvider>
   </React.StrictMode>,
 )

@@ -1,8 +1,5 @@
 import { useCart } from "../../context/cartContext"
 
-
-
-
 const CheckoutPage = () => {
     const {item} = useCart();
 

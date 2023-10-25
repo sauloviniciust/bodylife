@@ -1,24 +1,13 @@
 import { useState } from "react";
 import { Button } from "../Buttons";
 import { useCart } from "../../context/cartContext";
+import { useItem } from "../../context/ItemContext copy";
+import { ICart } from "../../interfaces/cartItem.interface";
 
-interface IProps {
-  id: string; 
-  src: string;
-  alt: string;
-  image: React.ReactNode;
-  product: string;
-  about: string;
-  price: string;
-  units: number;
-}
-
-function Counter ({id, src, alt, image, product, about, price, units }: IProps) {
-
+function Counter ({id, src, alt, image, product, about, price, units }: ICart) {
 
     const {setNumero, numero} = useCart();
-    const {setItem, item} = useCart();
-    
+    const {setItem, item} = useItem();
     
     const ItemToCHeckout = {id, src, alt, image, product, about, price, units}
     
@@ -59,4 +48,3 @@ function Counter ({id, src, alt, image, product, about, price, units }: IProps) 
 }
 
 export { Counter }
-
