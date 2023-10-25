@@ -15,6 +15,7 @@ import { Novidades } from './Pages/Novidades/index.tsx'
 import { Wear } from './Pages/Roupa/index.tsx'
 import { MenuMoba } from './Pages/Mobile/index.tsx'
 import {CartProvider} from './context/cartContext.tsx'
+import { CheckoutPage } from './Pages/ChekoutPage/index.tsx'
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "menumobile",
         element: <MenuMoba/>
+      },
+      {
+        path: "chekout",
+        element: <CheckoutPage/>
       },
 
 
