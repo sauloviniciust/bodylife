@@ -5,7 +5,7 @@ export interface ICart {
     image: React.ReactNode;
     product: string;
     about: string;
-    price: string;
+    price: number;
     units: number;
   }
   

@@ -6,9 +6,6 @@ import { Loading } from "./../Loading";
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  
-  
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsLoading(false);
@@ -19,8 +16,6 @@ const Main = () => {
     };
   }, []);
 
-
-
   return (
     <section className="bg-zinc-800 py-12 mt-14">
       <div className="container mx-auto px-4">
@@ -28,11 +23,12 @@ const Main = () => {
         {isLoading ? (
           <Loading/>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {cardsData.map((card) => (
-              <Card {...card} />
-              ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 
+          md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+           {cardsData.map(() => (<Card />))}
           </div>
+             
         )}
       </div>
     </section>

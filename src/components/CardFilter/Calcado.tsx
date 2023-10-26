@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Button } from "../Buttons";
 import { Counter } from "../Counter";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,6 @@ class Calcado extends Component<{
   id: string; 
   src: string;
   alt: string;
-  image: React.ReactNode;
   product: string;
   about: string;
   price: string;
@@ -23,7 +21,7 @@ class Calcado extends Component<{
         className="bg-zinc-700 rounded-lg shadow-black hover:bg-zinc-800 
         border-zinc-600 scale-75 md:scale-90 lg:scale-90 xl:scale-100 
         transition overflow-hidden ease-in-out delay-100 text-center 
-        z-10 transform hover:scale-105 border-2 shadow-2xl h-42">
+        z-10 transform hover:scale-105 border-2 shadow-2xl">
         
         <Link to={`/item?src=${this.props.src}
                     &product=${this.props.product}
@@ -31,23 +29,36 @@ class Calcado extends Component<{
                     &price=${this.props.price}
                     &alt=${this.props.alt}
                     &id=${this.props.id}`}>
+          
+          <div className="h-auto"><img src={this.props.src} alt={this.props.alt} /></div>
+          
+
         </Link>
+        
+        <div className="flex font-bold flex-col gap-5 p-4 text-black">
 
-          <div className="p-4">
-            <h3 className="text-xl font-bold text-black mb-2">{this.props.product}</h3>
+            <h3 className="text-xl">{this.props.product}</h3>
 
-            <p className="text-zinc-300 font-bold">
-             {this.props.about}<Counter /></p>
+            <p className="text-zinc-300">
+             {this.props.about}</p>
 
-            <div className="mt-4">
-              <span className="text-black font-bold mr-4">{this.props.price}</span>
+            <Counter src={this.props.src}
+                    product={this.props.product}
+                    about={this.props.about}
+                    price={this.props.price}
+                    alt={this.props.alt}
+                    id={this.props.id}
+                    image={this.props.src}
+                    units={1}/>
+            
+            <span>{this.props.price}</span>
 
-              <a href="#"><Button children="Adicionar" /></a>
-            </div>
         </div>
       </section>
     );
   }
 }
+
+
 
 export { Calcado };

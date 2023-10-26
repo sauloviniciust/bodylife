@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-
-
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {  ItemPage } from './Pages/Item/index.tsx'
 import { Home } from './Pages/Home/index.tsx'
@@ -17,7 +15,9 @@ import { MenuMoba } from './Pages/Mobile/index.tsx'
 import {CartProvider} from './context/cartContext.tsx'
 import {ItemProvider} from './context/ItemContext copy.tsx'
 import { CheckoutPage } from './Pages/ChekoutPage/index.tsx'
+import { useCartStore } from './store/CartStore.ts'
 
+useCartStore.subscribe((state) => console.log("New State", state))
 
 const router = createBrowserRouter([
   {
@@ -60,8 +60,6 @@ const router = createBrowserRouter([
         path: "chekout",
         element: <CheckoutPage/>
       },
-
-
     ],
   },
  
