@@ -9,6 +9,7 @@ type Item = {
     product: string;
     about: string;
     price: number;
+    units: number;
 }
 
 type CartStore  = {

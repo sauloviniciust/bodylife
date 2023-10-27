@@ -1,16 +1,10 @@
 import { useState } from "react";
-import { Button } from "../Buttons";
 import { useCart } from "../../context/cartContext";
-import { useItem } from "../../context/ItemContext copy";
-import { ICart } from "../../interfaces/cartItem.interface";
 
-function Counter ({id, src, alt, image, product, about, price, units }: ICart) {
+function Counter () {
 
     const {setNumero, numero} = useCart();
-    const {setItem, item} = useItem();
-    
-    const ItemToCHeckout = {id, src, alt, image, product, about, price, units}
-    
+
     const [count, setCount] = useState<number>(0);
 
     const add = () => {
@@ -23,16 +17,12 @@ function Counter ({id, src, alt, image, product, about, price, units }: ICart) {
         if(count > 0 ){
         setCount((value) => value - 1)
 
-       
     }}
 
     const handleProduct = () => {
-        ItemToCHeckout.units= count
         setNumero (numero + count)
         setCount(0);
-        setItem(ItemToCHeckout)
-        console.log(item)
-       
+     
     }
 
     return (
@@ -42,7 +32,10 @@ function Counter ({id, src, alt, image, product, about, price, units }: ICart) {
                 <h1 className="text-yellow-400 text-2xl">{count}</h1>
                 <button className="text-2xl"onClick={add}>+</button>
             </div>
-            <a onClick={handleProduct}><Button children="Adicionar"/></a>
+            <button onClick={handleProduct} className="mt-2 bg-zinc-950 font-semibold
+       hover:bg-zinc-600 text-zinc-200 py-2 
+       hover:text-black inline-block px-4 rounded">
+        Adicionar</button>
        </div>
     )
 }

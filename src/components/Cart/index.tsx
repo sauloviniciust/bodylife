@@ -1,4 +1,3 @@
-import { Total } from "../../components/Total";
 import { useCartStore } from "../../store/CartStore";
 
 
@@ -8,7 +7,12 @@ export const Cart = () => {
     state.cart, 
     state.removeFromCart]);
 
+    const sum = items.reduce((acc, item) => acc + item.price, 0);
 
+    const formater = new Intl.NumberFormat("pr-BR", {
+      style: "currency",
+      currency: "BRL",
+    })
  
   return (
     <div className="container mx-auto mt-10 p-4">
@@ -32,7 +36,7 @@ export const Cart = () => {
           </ul>
           <div className="mt-4">
             <span className="font-semibold">Total:</span>
-            <span className="text-2xl font-bold"><Total/></span>
+            <span className="text-2xl font-bold">{formater.format(sum)}</span>
           </div>
         </div>
         

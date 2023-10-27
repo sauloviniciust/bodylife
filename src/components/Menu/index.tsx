@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ShoppingCart, User, Search, MenuIcon } from "lucide-react";
-import { Chart } from "../Counter/chartCount";
 import { bodyLifeLogo } from "../Constants";
 import NavItem from "../StylePresset/NavItens";
+import { Total } from "../Total";
 
 
 const Menu = () => {
@@ -52,8 +52,8 @@ const Menu = () => {
             <li><NavItem href=".#" children={ <User />}/></li>
             <li>
               <a className="flex">
-                <NavItem href=".#" children={ <ShoppingCart />}/>
-                <Chart /></a>
+                <div><NavItem href="/cart" children={ <ShoppingCart />}/></div>
+                <div><Total/></div>   </a>
             </li>
           </ul>
         </div>

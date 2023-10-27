@@ -1,4 +1,3 @@
-import { Button } from "../Buttons";
 import { Carousel } from "./../Carousel";
 
 const Hero = () => {
@@ -10,7 +9,10 @@ const Hero = () => {
                 Confira estas novidades</h2>
           <p className="md:text-sm text-zinc-300 mt-2">
                 confira estas novidades, e corre por que acaba logo...</p>
-          <a href="/novidades" className="text-xl"><Button children="Confira" /></a>
+                <button className="mt-2 bg-zinc-950 font-semibold
+       hover:bg-zinc-600 text-zinc-200 py-2 
+       hover:text-black inline-block px-4 rounded">
+        confira</button>
         </div>
             
         <div className="w-full mb-10 md:w-2/3"><Carousel/></div>

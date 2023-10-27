@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card } from "../CardFilter";
+import { Card } from "../Cards";
 import { cardsData } from "../cardsData/CardsData";
 import { Loading } from "./../Loading";
 
