@@ -12,7 +12,7 @@ import {ItemProvider} from './context/ItemContext copy.tsx'
 import { Cart} from './Pages/ChekoutPage/index.tsx'
 import { useCartStore } from './store/CartStore.ts'
 
-useCartStore.subscribe((state) => console.log("New State", state))
+useCartStore.subscribe((Item) => console.log("New State", Item))
 
 const router = createBrowserRouter([
   {
