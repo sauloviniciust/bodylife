@@ -25,7 +25,6 @@ export const Card = () => {
                       &item=${item.item}
                       &price=${item.price}
                       &alt=${item.alt}
-                      &units=${item.units}
                       &id=${item.id}`}>
 
               <img className="h-auto" src={item.src} alt={item.alt} />

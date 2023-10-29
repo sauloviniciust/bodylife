@@ -1,19 +1,18 @@
 import { useCartStore } from "../../store/CartStore";
 
-
 export const Cart = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [items, removeFromCart] = useCartStore((state) => [
-    state.cart, 
-    state.removeFromCart]);
+    state.cart,
+    state.removeFromCart,
+  ]);
 
-    const sum = items.reduce((acc, item) => acc + item.price, 0);
+  const sum = items.reduce((acc, item) => acc + item.price, 0);
 
-    const formater = new Intl.NumberFormat("pr-BR", {
-      style: "currency",
-      currency: "BRL",
-    })
- 
+  const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
   return (
     <div className="container mx-auto mt-10 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -21,26 +20,23 @@ export const Cart = () => {
           <h2 className="text-2xl font-semibold mb-4">Resumo do Pedido</h2>
           {/* Listagem dos itens no carrinho */}
           <ul>
-          {items.map((item) => (
-            <li key={item.id} className="flex justify-between items-center">
-              <span>{item.product}</span>
-              <span>R$ {item.price}</span>
-              <button onClick={() =>{
-                removeFromCart(item.id)
-            }}>
-                Remove From cart
-            </button>
-            </li>
-         
-         ))} {/* Adicione mais itens do carrinho aqui */}
+            {items.map((item) => (
+              <li key={item.id} className="flex justify-between items-center">
+                <span>{item.product}</span>
+                <span>R$ {item.price}</span>
+                <button onClick={() => {
+                  removeFromCart(item.id);
+                }}>
+                  Remover do carrinho
+                </button>
+              </li>
+            ))}
           </ul>
           <div className="mt-4">
             <span className="font-semibold">Total:</span>
-            <span className="text-2xl font-bold">{formater.format(sum)}</span>
+            <span className="text-2xl font-bold">{formatter.format(sum)}</span>
           </div>
         </div>
-        
-        
 
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Informações de Pagamento</h2>
@@ -56,6 +52,3 @@ export const Cart = () => {
     </div>
   );
 };
-
-
-

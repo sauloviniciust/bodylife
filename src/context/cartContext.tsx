@@ -1,31 +1,48 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext, useReducer } from 'react';
 
-interface ICart {
-  numero: number;
-  setNumero: (value: number) => void;
-}
+// Defina um contexto para o carrinho
+const CartContext = createContext();
 
-export const CartContext = createContext<ICart>({
-  numero: 0,
-  setNumero: () => null
-  
-});
+// Defina as ações que podem ser realizadas no carrinho
+const cartReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+    case 'REMOVE_FROM_CART':
+      return {
+        ...state,
+        cart: state.cart.filter(item => item.id !== action.payload),
+      };
+    default:
+      return state;
+  }
+};
 
-interface ICartProviderProps {
-  children: React.ReactNode;
-}
+// Provedor do contexto do carrinho
+export const CartProvider = ({ children }) => {
+  // Estado inicial do carrinho
+  const initialState = {
+    cart: [], // Array que armazenará os itens no carrinho
+  };
 
-const CartProvider = ({ children }: ICartProviderProps) => {
-  const [numero, setNumero] = useState<number>(0);
+  // Utilize useReducer para controlar o estado do carrinho
+  const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <CartContext.Provider value={{ numero, setNumero}} >
+    <CartContext.Provider value={{ cartState, dispatch }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-const useCart = () => useContext(CartContext);
-
-export { useCart };
-export { CartProvider };
+// Hook personalizado para acessar o contexto do carrinho em componentes
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
+};
