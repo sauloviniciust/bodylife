@@ -38,7 +38,7 @@ export const Cart = () => {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-lg shadow-md">
+        <div className="bg-zinc-500 p-4 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Informações de Pagamento</h2>
           {/* Adicione campos do formulário de pagamento aqui (número do cartão, data de validade, etc.) */}
           <form>
