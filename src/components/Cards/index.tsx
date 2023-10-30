@@ -8,6 +8,8 @@ export const Card = () => {
  
   ]);
 
+ 
+
   return (
     <>
       {items.map((item) => (
@@ -36,6 +38,12 @@ export const Card = () => {
 
               <p className="text-zinc-300">{item.about}</p>
 
+              <div className="flex gap-5 rounded-2xl hover:bg-zinc-700">
+                <button className="text-2xl"onClick={sub}>-</button>
+                <h1 className="text-yellow-400 text-2xl">{item.units}</h1>
+                <button className="text-2xl"onClick={add}>+</button>
+            </div>
+                          
               <h1>R${item.price}</h1>
             </div>
           </>

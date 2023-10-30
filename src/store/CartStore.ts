@@ -9,6 +9,7 @@ type Item = {
     src: string;
     alt: string;
     item: string;
+    units: number;
 };
 
 type CartStore = {
