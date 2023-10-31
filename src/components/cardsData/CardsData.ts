@@ -1,7 +1,7 @@
 export const cardsData = [
   {
     id: "p01",
-    product: "Slider colcci",
+    product: "Slider Colcci",
     about: "Slider colcci em varias cores, super confortavel",
     price:  139.90,
     src: "Slider colcci.jpg",
@@ -11,7 +11,7 @@ export const cardsData = [
   },
   {
     id: "p02",
-    product: "Sandália colcci",
+    product: "Sandália Colcci",
     about: "Sandalia colcci em varias cores, super confortavel",
     price:  99.90,
     src: "Sandália colcci.jpg",
@@ -31,11 +31,11 @@ export const cardsData = [
   },
   {
     id: "p04",
-    product: "Bolsa colcci",
-    about: "Bolsa colcci em varias cores, para varias ocasioes",
+    product: "Bolsa Colcci",
+    about: "Bolsa colcci em varias cores, para varias ocasiões",
     price:  289.90,
     src: "bolsa colcci.png",
-    alt:"Bolsa colcci em varias cores, para varias ocasioes",
+    alt:"Bolsa colcci em varias cores, para varias ocasiões",
     item:"acessorio",
     units: 0,
   }, 
@@ -61,7 +61,7 @@ export const cardsData = [
   },
   {
     id: "p07",
-    product: "Garrafa dobravel LIVE",
+    product: "Garrafa Dobravel LIVE",
     about: "Garrafa termica de otima qualidade",
     price: 109.90,
     src: "Garrafa dobravel LIVE.jpg",
@@ -71,7 +71,7 @@ export const cardsData = [
   },
    {
     id: "p08",
-    product: "Rasteira colcci",
+    product: "Rasteira Colcci",
     about: "Rasteira basica super confortavel ",
     price:  149.0 ,
     src: "Rasteira colcci.jpg",
