@@ -31,4 +31,3 @@ export const useCartStore = create<CartStore>((set) => {
             cart: state.cart.filter((item) => item.id !== id)})), 
     }
 })
-

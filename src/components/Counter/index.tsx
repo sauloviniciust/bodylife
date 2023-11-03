@@ -1,16 +1,15 @@
-import { useCartStore } from "../../store/CartStore";
+import { useState } from "react";
+import { useCart } from "../../context/cartContext";
 
 function Counter () {
 
-    const items = useCartStore(
-        (state: { availableItems: object; }) => 
-        state.availableItems);
+    const {setNumero, numero} = useCart();
 
- 
+    const [count, setCount] = useState<number>(0);
 
     const add = () => {
-        if(items.units < 5 ){
-        items.units++
+        if(count < 5 ){
+        setCount((value) => value + 1)
     }
 }
 
