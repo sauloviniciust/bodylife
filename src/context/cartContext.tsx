@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import  { createContext, useContext, useReducer } from 'react';
 
 // Defina um contexto para o carrinho
 const CartContext = createContext();

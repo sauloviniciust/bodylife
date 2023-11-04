@@ -3,10 +3,9 @@ import { useCartStore } from "../../store/CartStore";
 
 
 export const Cart = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [items, removeFromCart] = useCartStore((state) => [
-    state.cart, 
-    state.removeFromCart]);
+  const items = useCartStore((state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+
 
 
  
@@ -17,12 +16,12 @@ export const Cart = () => {
           <h2 className="text-2xl font-semibold mb-4">Resumo do Pedido</h2>
           {/* Listagem dos itens no carrinho */}
           <ul>
-          {items.map((item) => (
+          {items.map((item, index) => (
             <li key={item.id} className="flex justify-between items-center">
               <span>{item.product}</span>
               <span>R$ {item.price}</span>
               <button onClick={() =>{
-                removeFromCart(item.id)
+                removeFromCart(index)
             }}>
                 Remove From cart
             </button>
