@@ -32,10 +32,7 @@ function Counter () {
                 <h1 className="text-yellow-400 text-2xl">{count}</h1>
                 <button className="text-2xl"onClick={add}>+</button>
             </div>
-            <button onClick={handleProduct} className="mt-2 bg-zinc-950 font-semibold
-       hover:bg-zinc-600 text-zinc-200 py-2 
-       hover:text-black inline-block px-4 rounded">
-        Adicionar</button>
+          
        </div>
     )
 }
