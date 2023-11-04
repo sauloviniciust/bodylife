@@ -1,10 +1,10 @@
 import  { createContext, useContext, useReducer } from 'react';
 
 // Defina um contexto para o carrinho
-const CartContext = createContext();
+const CartContext = createContext("");
 
 // Defina as ações que podem ser realizadas no carrinho
-const cartReducer = (state, action) => {
+const cartReducer = (state: { cart: any[]; }, action: { type: any; payload: any; }) => {
   switch (action.type) {
     case 'ADD_TO_CART':
       return {
@@ -14,7 +14,7 @@ const cartReducer = (state, action) => {
     case 'REMOVE_FROM_CART':
       return {
         ...state,
-        cart: state.cart.filter(item => item.id !== action.payload),
+        cart: state.cart.filter((item: { id: object; }) => item.id !== action.payload),
       };
     default:
       return state;
