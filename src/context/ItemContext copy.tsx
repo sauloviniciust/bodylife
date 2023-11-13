@@ -1,18 +1,14 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, Dispatch, SetStateAction } from "react";
 import { ICart } from "../interfaces/cartItem.interface";
 
-
 interface IItem {
-  
   item: object;
-  setItem: (value: ICart) => void;
+  setItem: Dispatch<SetStateAction<ICart[]>>; // Corrected type
 }
 
 export const ItemContext = createContext<IItem>({
- 
   item: {},
-  setItem: () => null
-  
+  setItem: () => null,
 });
 
 interface IItemProviderProps {
@@ -23,7 +19,7 @@ const ItemProvider = ({ children }: IItemProviderProps) => {
   const [item, setItem] = useState<ICart[]>([]);
 
   return (
-    <ItemContext.Provider value={{ item, setItem }} >
+    <ItemContext.Provider value={{ item, setItem }}>
       {children}
     </ItemContext.Provider>
   );
@@ -31,5 +27,4 @@ const ItemProvider = ({ children }: IItemProviderProps) => {
 
 const useItem = () => useContext(ItemContext);
 
-export { useItem };
-export { ItemProvider };
+export { useItem, ItemProvider };

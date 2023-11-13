@@ -1,10 +1,26 @@
-import  { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, ReactNode, Dispatch } from 'react';
+
+// Define o tipo para o estado do carrinho
+interface CartState {
+  cart: string[]; // ou o tipo apropriado para os itens do carrinho
+}
+
+// Define as ações que podem ser realizadas no carrinho
+interface CartAction {
+  type: string;
+  payload: string;
+}
 
 // Defina um contexto para o carrinho
-const CartContext = createContext("");
+const CartContext = createContext<{ cartState: CartState; dispatch: Dispatch<CartAction> } | undefined>(undefined);
 
-// Defina as ações que podem ser realizadas no carrinho
-const cartReducer = (state: { cart: any[]; }, action: { type: any; payload: any; }) => {
+// Defina o estado inicial do carrinho
+const initialState: CartState = {
+  cart: [],
+};
+
+// Defina o redutor do carrinho
+const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_TO_CART':
       return {
@@ -14,7 +30,7 @@ const cartReducer = (state: { cart: any[]; }, action: { type: any; payload: any;
     case 'REMOVE_FROM_CART':
       return {
         ...state,
-        cart: state.cart.filter((item: { id: object; }) => item.id !== action.payload),
+        cart: state.cart.filter((item) => item !== action.payload),
       };
     default:
       return state;
@@ -22,12 +38,7 @@ const cartReducer = (state: { cart: any[]; }, action: { type: any; payload: any;
 };
 
 // Provedor do contexto do carrinho
-export const CartProvider = ({ children }) => {
-  // Estado inicial do carrinho
-  const initialState = {
-    cart: [], // Array que armazenará os itens no carrinho
-  };
-
+export const CartProvider = ({ children }: { children: ReactNode }) => {
   // Utilize useReducer para controlar o estado do carrinho
   const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
