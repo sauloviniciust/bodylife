@@ -1,3 +1,23 @@
+
+
+
+// import {doc, getDoc, getFirestore} from 'firebase/firestore'
+// import { useEffect } from 'react';
+
+// useEffect(() => {
+//   const onMount = async () => {
+    
+//   const db = getFirestore();
+
+//   const biciref = doc(db, "items");
+
+//   const resp = await getDoc(biciref);
+//   }
+
+//   onMount();
+// }, [])
+
+
 export const cardsData = [
   {
     id: "p01",

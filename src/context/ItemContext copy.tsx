@@ -3,7 +3,7 @@ import { ICart } from "../interfaces/cartItem.interface";
 
 interface IItem {
   item: object;
-  setItem: Dispatch<SetStateAction<ICart[]>>; // Corrected type
+  setItem: Dispatch<SetStateAction<ICart[]>>; 
 }
 
 export const ItemContext = createContext<IItem>({
