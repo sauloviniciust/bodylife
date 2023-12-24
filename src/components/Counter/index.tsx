@@ -1,29 +1,73 @@
+import { Trash2 } from "lucide-react";
 import { useState } from "react";
+import { useCartStore } from "../../store/CartStore";
 
-function Counter() {
-  const [count, setCount] = useState<number>(0);
+
+type Item = {
+  item: string;
+  id: string; 
+  src: string;
+  alt: string;
+  product: string;
+  about: string;
+  price: number;
+  units: number;
+  quantity: number
+};
+
+interface CounterProps {
+  item: Item;
+}
+
+function Counter({ item }: CounterProps) {
+  const [addToCart, updateQuantity] = useCartStore((state) => [
+    state.addToCart,
+    state.updateQuantity,
+  ]);
+
+  const [quantity, setQuantity] = useState<number>(0);
 
   const add = () => {
-    if (count < 5) {
-      setCount((value) => value + 1);
+    if (quantity < 5) {
+      setQuantity((value) => value + 1);
+      addToCart(item);
+      updateQuantity(item.id, quantity + 1);
     }
   };
 
   const sub = () => {
-    if (count > 0) {
-      setCount((value) => value - 1);
+    if (quantity > 0) {
+      setQuantity((value) => value - 1);
+      updateQuantity(item.id, quantity - 1);
     }
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex justify-center w-20 gap-5 rounded-2xl hover:bg-zinc-700">
-        <button onClick={sub}>-</button>
-        <h1 className=" text-yellow-400 text-lg ">{count}</h1>
-        <button onClick={add}>+</button>
-      </div>
+    <div className="flex justify-center mb-5">
+      <div className="flex justify-center w-20 rounded-2xl">
+        {quantity > 0 && (
+          <div className="flex gap-3">
+            <button
+              className="mt-2 bg-zinc-950 font-semibold rounded py-2 
+                  text-zinc-200 px-4 hover:bg-zinc-600 inline-block 
+                  hover:text-black"
+              onClick={sub}
+            >
+              {quantity === 1 ? <Trash2 /> : "-"}
+            </button>
 
-    
+            <h1 className="text-yellow-400 text-xl mt-3">{quantity}</h1>
+          </div>
+        )}
+        <button
+          className="mt-2 ml-3 bg-zinc-950 font-semibold rounded 
+              text-zinc-200 px-4 hover:bg-zinc-600 inline-block 
+              hover:text-black py-2"
+          onClick={add}
+        >
+          Adicionar
+        </button>
+      </div>
     </div>
   );
 }

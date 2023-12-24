@@ -1,10 +1,10 @@
-import { useCartStore } from "../store/CartStore";
+import { useCartStore } from "./../../store/CartStore";
 
 export const Total = () => {
   const items = useCartStore((state) => state.cart);
 
-  const totalItems = items.length;
-  const sum = items.reduce((acc, item) => acc + item?.price, 0);
+  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+  const sum = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const formatter = new Intl.NumberFormat("pt-BR", {
     style: "currency",

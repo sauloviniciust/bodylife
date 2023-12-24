@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ShoppingCart, User, Search, MenuIcon } from "lucide-react";
 import NavItem from "../StylePresset/NavItens";
-import { Total } from "../Total";
+import { Total } from "./../valorTotal";
 
 const Menu = () => {
   const [isScrolled, setIsScrolled] = useState(false);

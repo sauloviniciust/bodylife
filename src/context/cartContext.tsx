@@ -9,7 +9,6 @@ interface CartAction {
   payload: string;
 }
 
-
 const CartContext = createContext<{ cartState: CartState; dispatch: Dispatch<CartAction> } | undefined>(undefined);
 
 

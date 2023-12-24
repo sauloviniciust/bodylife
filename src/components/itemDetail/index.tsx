@@ -1,11 +1,9 @@
 import { Component } from "react";
 import { LoadingPage } from "../../Pages/Loading";
 import Checked from "../StylePresset/Checked";
-
 interface ItemState {
   isLoading: boolean;
 }
-
 class Item extends Component<{
   alt: string;
   product: string;
@@ -38,8 +36,7 @@ class Item extends Component<{
     }
 
     return (
-    
-        <div className="flex font-sans my-40 mx-20">
+      <div className="flex font-sans my-40 mx-20">
         <div className="hover:scale-125 flex-none w-48 relative border-2 border-zinc-800 shadow-black shadow-xl ">
          <img src={this.props.src} alt={this.props.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
@@ -49,7 +46,7 @@ class Item extends Component<{
             {this.props.product}
             </h1>
             <div className="text-lg font-semibold text-zinc-100">
-            {this.props.price}
+            R$-{this.props.price}
             </div>
             <div className="w-full flex-none text-sm font-medium text-zinc-100 mt-2">
             {this.props.about}
@@ -83,17 +80,17 @@ class Item extends Component<{
           <div className="flex space-x-4 mb-6 text-sm font-medium">
             <div className="flex-auto flex space-x-4">
               <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
-                Buy now
+                Compre 
               </button>
               <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-zinc-200" type="button">
-                Add to bag
+                Adicione ao carrinho
               </button>
             </div>
-            <button className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
+            {/* <button className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
               <svg width="20" height="20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
               </svg>
-            </button>
+            </button> */}
           </div>
           <p className="text-sm text-zinc-100">
             Envios para todo pais(favor consultar o frete).

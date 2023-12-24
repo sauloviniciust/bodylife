@@ -1,6 +1,5 @@
-
 import { useLocation } from "react-router-dom";
-import { Item } from "../../components/Item";
+import { Item } from "../../components/itemDetail";
 
 export const ItemPage = () => {
   const location = useLocation();

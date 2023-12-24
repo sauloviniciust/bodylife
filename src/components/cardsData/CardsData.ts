@@ -17,7 +17,7 @@
 //   onMount();
 // }, [])
 
-
+ 
 export const cardsData = [
   {
     id: "p01",
@@ -28,6 +28,7 @@ export const cardsData = [
     alt:"Slider colcci em varias cores, super confortavel",
     item:"calcado",
     units: 0,     
+    quantity: 1,
   },
   {
     id: "p02",
@@ -38,6 +39,7 @@ export const cardsData = [
     alt:"Sandalia colcci em varias cores, super confortavel",
     item:"calcado",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p03",
@@ -48,6 +50,7 @@ export const cardsData = [
     alt:"Vestidos colcci em varias cores e tecido super leve",
     item:"roupa",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p04",
@@ -58,6 +61,7 @@ export const cardsData = [
     alt:"Bolsa colcci em varias cores, para varias ocasioes",
     item:"acessorio",
     units: 0,
+    quantity: 1,
   }, 
   {
     id: "p05",
@@ -68,6 +72,7 @@ export const cardsData = [
     alt:"Imagem de bolsa ccm ",
     item:"acessorio",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p06",
@@ -78,6 +83,7 @@ export const cardsData = [
     alt:"Imagem de carteira colcci",
     item:"acessorio",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p07",
@@ -88,6 +94,7 @@ export const cardsData = [
     alt:"Imagem de garraga dobravel live ",
     item:"acessorio",
     units: 0,
+    quantity: 1,
   },
    {
     id: "p08",
@@ -98,6 +105,7 @@ export const cardsData = [
     alt:"Imagem de uma rasteira colcci ",
     item:"calcado",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p09",
@@ -108,6 +116,7 @@ export const cardsData = [
     alt:"Imagem de uma regata colcci",
     item:"roupa",
     units: 0,
+    quantity: 1,
   },
   {
     id: "p10",
@@ -118,6 +127,7 @@ export const cardsData = [
     alt:"Imagem de um tenis labellamafia",
     item:"calcado",
     units: 0,
+    quantity: 1,
   },
  
 ];

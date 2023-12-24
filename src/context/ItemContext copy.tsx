@@ -1,5 +1,6 @@
-import { createContext, useState, useContext, Dispatch, SetStateAction } from "react";
 import { ICart } from "../interfaces/cartItem.interface";
+import { createContext, useState, useContext, 
+          Dispatch, SetStateAction } from "react";
 
 interface IItem {
   item: object;

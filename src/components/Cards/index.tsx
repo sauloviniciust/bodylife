@@ -33,7 +33,7 @@ export const Card = () => {
   
 
 
-  const [items, addToCart] = useCartStore((state) => [
+  const [items] = useCartStore((state) => [
     state.availableItems,
     state.addToCart,
  
@@ -58,6 +58,7 @@ export const Card = () => {
                       &price=${item.price}
                       &alt=${item.alt}
                       &units=${item.units}
+                      &quantity=${item.quantity}
                       &id=${item.id}`}
             >
               <img className="h-auto" src={item.src} alt={item.alt} />
@@ -72,13 +73,8 @@ export const Card = () => {
             </div>
           </>
 
-          <Counter/>
+          <Counter item={item}/>
 
-
-          <button className="mt-2 bg-zinc-950 font-semibold
-                hover:bg-zinc-600 text-zinc-200 py-2 
-                hover:text-black inline-block px-4 rounded"
-            onClick={() => {addToCart(item);}}>Adicionar</button>
         </section>
       ))}
     </>
