@@ -1,6 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
-
 const Footer = () => {
   return (
     <>
@@ -47,7 +46,6 @@ const Footer = () => {
             <div className="mt-8 border-t border-gray-600 pt-4">
               <p className="text-sm text-gray-500">&copy; 2023 @sauloviniciust. All rights reserved.</p>
             </div>
-        
         </div>
       </footer>
     </>

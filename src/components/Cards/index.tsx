@@ -31,8 +31,6 @@ export const Card = () => {
       onMount();
   }, [])
   
-
-
   const [items] = useCartStore((state) => [
     state.availableItems,
     state.addToCart,

@@ -6,6 +6,5 @@ const LoadingPage = () => {
                   <div className="relative inline-flex rounded-full h-10 w-10 bg-zinc-800"></div>
             </div>
         </div>
-    )
-    }
+    )}
     export {LoadingPage}

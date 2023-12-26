@@ -4,7 +4,6 @@ import { cardsData } from "../cardsData/CardsData";
 import { Loading } from "./../Loading";
 import {collection, getDocs, getFirestore} from 'firebase/firestore'
 
-
 const Main = () => {
 
   useEffect(() => {

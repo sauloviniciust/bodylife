@@ -7,14 +7,9 @@ import {  ItemPage } from './Pages/Item/index.tsx'
 import { Home } from './Pages/Home/index.tsx'
 import { LoadingPage } from './Pages/Loading/index.tsx'
 import { MenuMoba } from './Pages/Mobile/index.tsx'
-import { CartProvider } from './context/cartContext.tsx'
-import { ItemProvider } from './context/ItemContext copy.tsx'
-import { Cart} from './Pages/ChekoutPage/index.tsx'
+import { Cart } from './Pages/ChekoutPage/index.tsx'
 import { useCartStore } from './store/CartStore.ts'
 import { initializeApp } from "firebase/app";
-
-
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAffcpRNo6TNbFtzSoHtA0dd018Zs_dA8s",
@@ -60,11 +55,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CartProvider>
-    <ItemProvider>
     <RouterProvider router={router}/>
-    </ItemProvider>
-    </CartProvider>
   </React.StrictMode>,
 )
 
