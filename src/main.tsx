@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import {  ItemPage } from './Pages/Item/index.tsx'
+import {  ItemPage } from './components/Item/index.tsx'
 import { Home } from './Pages/Home/index.tsx'
-import { LoadingPage } from './Pages/Loading/index.tsx'
 import { MenuMoba } from './Pages/Mobile/index.tsx'
 import { Cart } from './Pages/ChekoutPage/index.tsx'
 import { useCartStore } from './store/CartStore.ts'
 import { initializeApp } from "firebase/app";
+import { Loading } from './components/Loading/index.tsx'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAffcpRNo6TNbFtzSoHtA0dd018Zs_dA8s",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "loading",
-        element: <LoadingPage/>
+        element: <Loading/>
       },
       {
         path: "menumobile",

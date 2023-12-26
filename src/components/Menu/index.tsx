@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ShoppingCart, User, Search, MenuIcon } from "lucide-react";
+import { ShoppingCart, MenuIcon } from "lucide-react";
 import NavItem from "../StylePresset/NavItens";
 import { Total } from "./../valorTotal";
 
@@ -28,11 +28,11 @@ const Menu = () => {
         className={`flex place-content-between items-center text-white font-sans
          shadow-zinc-900 shadow-2xl hover:shadow-zinc-700 hover:shadow-lg  
          w-full fixed top-0 z-20 transition duration-1000 ease-in-out ${
-           isScrolled ? "bg-black" : "bg-transparent"
-         }`}>
+           isScrolled ? "bg-black" : "bg-transparent"}`}>
 
-        <a href="/"><img className="hover:animate-pulse w-40 md:44 lg:w-56"
-            src="bodylifebranco.png"alt="BodyLife Logo"/></a>
+        <a className="hover:animate-pulse w-40 md:44 lg:w-56 hidden md:block"
+          href="/"><img alt="BodyLife Logo" src="bodylifebranco.png"/>
+        </a>
 
         <div className="flex-grow hidden md:block">
           <ul className="flex space-x-10 justify-center ">
@@ -54,30 +54,31 @@ const Menu = () => {
         <div className=" hidden md:block">
           <ul className="flex space-x-2 mr-6 ">
             <li>
-              <NavItem href=".#" children={<Search />} />
-            </li>
-            <li>
-              <NavItem href=".#" children={<User />} />
-            </li>
-            <li>
-              <a>
-                <NavItem
-                  href="/cart"
-                  children={
-                    <>
-                      <ShoppingCart /> <Total />
-                    </>
-                  }
-                />
-              </a>
+              <div className="flex text-lg ">
+                <ShoppingCart /> <Total />
+              </div>
             </li>
           </ul>
         </div>
-        <div className="block md:hidden text-white py-2 mr-4">
-          <a href="menumobile">
-            {" "}
+
+        <div className="flex md:hidden grow justify-between ml-3">
+          <a className="self-center" href="menumobile">
             <MenuIcon />
           </a>
+
+          <div className=" hidden md:block"></div>
+            <a href="/">
+              <img className="hover:animate-pulse w-40 md:44 lg:w-56 my-3 "
+                alt="BodyLife Logo"src="bodylifebranco.png"/>
+            </a>
+
+            <div className="flex list-none md:hidden text-white py-2 mr-4 self-center">
+            <a> <NavItem href="/cart" children={ <div className="flex text-lg">
+                  <ShoppingCart /> <Total />
+                </div>
+                }/>
+            </a>
+          </div>
         </div>
       </div>
     </>

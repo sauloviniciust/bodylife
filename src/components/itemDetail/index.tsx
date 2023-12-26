@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { LoadingPage } from "../../Pages/Loading";
 import Checked from "../StylePresset/Checked";
+import { Loading } from "../Loading";
 interface ItemState {
   isLoading: boolean;
 }
@@ -32,7 +32,7 @@ class Item extends Component<{
 
   render() {
     if (this.state.isLoading) {
-      return <LoadingPage />;
+      return <Loading />;
     }
 
     return (

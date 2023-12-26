@@ -11,6 +11,7 @@ const Mobile = () => {
        <li><NavItem href="/roupas" children="Roupas"/></li>
       <li><NavItem href="/calcados" children="Calçados"/></li>
       <li><NavItem href="/acessorios" children="Acessorios"/></li>
+      
     </ul>
        
   );
