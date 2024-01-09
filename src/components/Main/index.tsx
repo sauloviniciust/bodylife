@@ -26,7 +26,6 @@ const Main = () => {
     }
       onMount();
   }, [])
-
   
   const [isLoading, setIsLoading] = useState(true);
 

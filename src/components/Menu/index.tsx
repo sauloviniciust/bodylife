@@ -55,7 +55,7 @@ const Menu = () => {
           <ul className="flex space-x-2 mr-6 ">
             <li>
               <div className="flex text-lg ">
-                <ShoppingCart /> <Total />
+              <NavItem href="/cart"  children={<><ShoppingCart /><Total /></>}/>
               </div>
             </li>
           </ul>
