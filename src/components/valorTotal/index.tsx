@@ -12,7 +12,7 @@ export const Total = () => {
   });
 
   return (
-    <h1>
+    <h1 className="text-yellow-400">
       {totalItems === 0 ? (
         "Carrinho vazio"
       ) : (
