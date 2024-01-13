@@ -1,32 +1,36 @@
 import { useEffect, useState } from "react";
 import { Card } from "../Cards";
-import { cardsData } from "../cardsData/CardsData";
 import { Loading } from "./../Loading";
-import {collection, getDocs, getFirestore} from 'firebase/firestore'
+import { cardsData } from "../cardsData/CardsData";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const Main = () => {
+  const [products, setProducts] = useState([{}]);
 
   useEffect(() => {
     const onMount = async () => {
-      const db = getFirestore();
-      const collections = collection(db, "items");
-      const fireData = await getDocs(collections)
- 
-      fireData.docs.map(data => {
-        
-        console.log(data.data());
-      })
+      try {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "bodyLifeItems");
 
-    getDocs(collections).then((snapshot) => {
-      snapshot.docs.map(data => {
-        console.log(data.data());
-      })
-    })
-    
-    }
-      onMount();
-  }, [])
-  
+        const snapshot = await getDocs(itemsCollection);
+
+        const items = snapshot.docs.map((data) => ({id: data.id, ...data.data()}));
+        console.log(items)
+        
+        setProducts(items)
+        console.log(products)
+       
+        // items.map((item) =>
+        //   );
+     
+      } catch (error) {
+        console.error("Error fetching data from Firestore:", error);
+      }
+    };
+    onMount();
+  }, []);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -48,7 +52,7 @@ const Main = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cardsData.map((item) => (
-              <Card key={item.id}  />
+              <Card key={item.id} />
             ))}
           </div>
         )}

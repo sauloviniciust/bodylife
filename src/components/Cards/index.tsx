@@ -1,36 +1,9 @@
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store/CartStore";
-import {collection, getDocs, getFirestore} from 'firebase/firestore'
-import { useEffect } from 'react';
 import { Counter } from "../Counter";
 
 export const Card = () => {
 
-  useEffect(() => {
-    const onMount = async () => {
-      const db = getFirestore();
-
-      
-      const collections = collection(db, "items");
-      const fireData = await getDocs(collections)
- 
-      console.log(fireData.docs);
-
-      // fireData.docs.map(fireItem => {
-      //      console.log(fireItem.data())
-     
-      //     })
-
-    getDocs(collections).then((snapshot) => {
-      snapshot.docs.map(data => {
-        console.log(data.data());
-      })
-    })
-    
-    }
-      onMount();
-  }, [])
-  
   const [items] = useCartStore((state) => [
     state.availableItems,
     state.addToCart,
