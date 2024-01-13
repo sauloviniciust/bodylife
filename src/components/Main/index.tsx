@@ -18,11 +18,12 @@ const Main = () => {
         const items = snapshot.docs.map((data) => ({id: data.id, ...data.data()}));
         console.log(items)
         
-        setProducts(items)
+        setProducts((prevProducts) => [...prevProducts, ...items]);
         console.log(products)
-       
-        // items.map((item) =>
-        //   );
+        
+        items.map((item) =>
+        console.log(item)
+          );
      
       } catch (error) {
         console.error("Error fetching data from Firestore:", error);
