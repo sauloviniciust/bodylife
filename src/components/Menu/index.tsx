@@ -37,16 +37,16 @@ const Menu = () => {
         <div className="flex-grow hidden md:block">
           <ul className="flex space-x-10 justify-center ">
             <li>
-              <NavItem href="/novidades" children="Novidades" />
+              <NavItem href="/" children="Novidades" />
             </li>
             <li>
-              <NavItem href="/roupas" children="Roupas" />
+              <NavItem href="/" children="Roupas" />
             </li>
             <li>
-              <NavItem href="/calcados" children="Calçados" />
+              <NavItem href="/" children="Calçados" />
             </li>
             <li>
-              <NavItem href="/acessorios" children="Acessorios" />
+              <NavItem href="/" children="Acessorios" />
             </li>
           </ul>
         </div>

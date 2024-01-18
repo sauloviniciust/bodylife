@@ -56,7 +56,7 @@ function Counter({ item }: CounterProps) {
               {quantity === 1 ? <Trash2 /> : "-"}
             </button>
 
-            <h1 className="text-yellow-400 text-xl mt-3">{quantity}</h1>
+            <h1 className="text-zinc-200 text-xl mt-3">{quantity}</h1>
           </div>
         )}
         <button
