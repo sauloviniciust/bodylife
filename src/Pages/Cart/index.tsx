@@ -1,11 +1,22 @@
+// Cart.tsx
 import { Trash2, PlusCircle, MinusCircle } from "lucide-react";
 import { useCartStore } from "../../store/CartStore";
 import { Total } from "../../components/valorTotal";
+import { useNavigate } from "react-router-dom"; // Importe o hook useNavigate
 
 export const Cart = () => {
   const items = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
+  const navigate = useNavigate(); // Obtenha a função navigate do hook useNavigate
+
+  const handleCheckout = () => {
+    // Adicione aqui a lógica para finalizar a compra
+    // ...
+
+    // Navegue para a página de checkout
+    navigate('/checkout');
+  };
 
   return (
     <div className="container mx-auto my-56 p-4">
@@ -44,16 +55,13 @@ export const Cart = () => {
             <span className="font-semibold">Total:</span>
             <span className="text-2xl font-bold"><Total /></span>
           </div>
-        </div>
 
-        <div className="bg-zinc-900 text-zinc-300 p-4 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Informações de Pagamento</h2>
-         
-          <form>
-            <button className="bg-black text-zinc-300 font-semibold py-2 px-4 rounded-md hover:bg-gray-800">
-              Finalizar Compra
-            </button>
-          </form>
+          <button
+            className="bg-black text-zinc-300 font-semibold py-2 px-4 rounded-md hover:bg-gray-800"
+            onClick={handleCheckout}
+          >
+            Finalizar Compra
+          </button>
         </div>
       </div>
     </div>

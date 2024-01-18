@@ -3,15 +3,12 @@ import { useCartStore } from "../../store/CartStore";
 import { Counter } from "../Counter";
 
 export const Card = () => {
-
   const [items] = useCartStore((state) => [
     state.availableItems,
     state.addToCart,
- 
   ]);
-
   return (
-    <>    
+    <>
       {items.map((item) => (
         <section
           key={item.id}
@@ -43,9 +40,7 @@ export const Card = () => {
               <h1>R$ - ${item.price}</h1>
             </div>
           </>
-
-          <Counter item={item}/>
-
+          <Counter item={item} />
         </section>
       ))}
     </>
