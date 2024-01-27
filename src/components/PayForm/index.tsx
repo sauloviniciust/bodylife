@@ -4,7 +4,6 @@ import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { Buyer } from "../../interface/Buyer";
 import { useState } from "react";
-
 interface PayFormProps {
   items: object;
   total: string;
@@ -14,11 +13,11 @@ interface PayFormProps {
 const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
   const { buyer, setBuyer } = useBuyer();
   const [formData, setFormData] = useState<Buyer>({
-    name: '',
-    email: '',
+    name: "",
+    email: "",
     phone: 0,
-    message: '',
-    method: '',
+    message: "",
+    method: "",
   });
   const ordersCollection = collection(db, "orders");
   const order = {
@@ -26,12 +25,15 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
     items,
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
-    
+    setBuyer(formData);
   };
-
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,7 +50,6 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
 
   console.log(buyer);
   console.log(total);
-  
 
   return (
     <section className="rounded-3xl container mx-auto" id="pay-form">
