@@ -1,34 +1,34 @@
-// import { collection, getDocs } from "firebase/firestore";
-// import { useState, useEffect } from "react";
-// import { db } from "../../firebase/config";
-// import { Product } from "../../interface/Product";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../firebase/config";
+import { useData } from "../../Context/DataContext";
 
-// const CardsData2 = () => {
-//   const [products, setProducts] = useState<Product[]>([]);
+const CardsData2 = () => {
+  const { setProduct } = useData();
 
-//   useEffect(() => {
-//     const onMount = async () => {
-//       try {
-//         const itemsCollection = collection(db, "bodyLifeItems");
-//         const snapshot = await getDocs(itemsCollection);
+  useEffect(() => {
+    const onMount = async () => {
+      try {
+        const itemsCollection = collection(db, "bodyLifeItems");
+        const snapshot = await getDocs(itemsCollection);
 
-//         const items = snapshot.docs.map((data) => ({
-//           id: data.id,
-//           ...data.data(),
-//         }));
-//         setProducts(items);
-//       } catch (error) {
-//         console.error("Error fetching data from Firestore:", error);
-//       }
-//     };
+        const items = snapshot.docs.map((data) => ({
+          id: data.id,
+          ...data.data(),
+        }));
+        setProduct(items);
+      } catch (error) {
+        console.error("Error fetching data from Firestore:", error);
+      }
+    };
 
-//     onMount();
-//   }, []);
+    onMount();
+  }, [setProduct]);
 
   
-//   return (
-//    <></>
-//   )
-// };
+  return (
+   <></>
+  )
+};
 
-// export { CardsData2 };
+export { CardsData2 };

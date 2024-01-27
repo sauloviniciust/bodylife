@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { CartStore } from '../interface/CartStore';
 import { cardsData } from '../components/cardsData/CardsData';
+// import { cardsData } from '../components/cardsData/CardsData';
+// import { useData } from '../Context/DataContext';
 
 const LoadCartFromStorage = () => {
   

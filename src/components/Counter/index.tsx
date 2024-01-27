@@ -1,22 +1,9 @@
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
 import { useCartStore } from "../../store/CartStore";
-
-
-type Item = {
-  item: string;
-  id: string; 
-  src: string;
-  alt: string;
-  product: string;
-  about: string;
-  price: number;
-  units: number;
-  quantity: number
-};
-
+import { Product } from "../../interface/Product";
 interface CounterProps {
-  item: Item;
+  item: Product;
 }
 
 function Counter({ item }: CounterProps) {

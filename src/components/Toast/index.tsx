@@ -7,7 +7,9 @@ export function Toast(){
 
   return (
     <div>
-      <button className="bg-black text-zinc-300 font-semibold py-2 px-4 rounded-md hover:bg-gray-800"
+      <button className="bg-black text-zinc-300 font-semibold 
+      py-2 px-4 rounded-md hover:text-black hover:bg-zinc-600 
+      shadow-xl hover:shadow-zinc-900"
               onClick={notify}>Finalizar compra</button>
       <ToastContainer />
     </div>

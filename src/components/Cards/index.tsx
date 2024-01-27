@@ -19,10 +19,10 @@ export const Card = () => {
         >
           <>
             <Link
-              to={`/item?src=${item.src}
+              to={`/item?
+                      src=${item.src}
                       &product=${item.product}
                       &about=${item.about}
-                      &item=${item.item}
                       &price=${item.price}
                       &alt=${item.alt}
                       &units=${item.units}

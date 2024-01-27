@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import FooterItem from "../StylePresset/FooterItems";
 
 const Footer = () => {
   return (
@@ -9,28 +10,28 @@ const Footer = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Sobre</h3>
                   <ul className="space-y-2">
-                   <li><a className="hover:text-slate-600" href="#">Empresa</a></li>
-                    <li><a className="hover:text-slate-600" href="#">Time</a></li>
-                    <li><a className="hover:text-slate-600" href="#">Contato</a></li>
-                  </ul>
+                  <li><FooterItem href=".#" children="Empresa"/></li>
+                  <li><FooterItem href=".#" children="Time"/></li>
+                  <li><FooterItem href=".#" children="Contato"/></li>
+                 </ul>
               </div>
             <div>
                 <h3 className="text-lg font-semibold mb-4">Menu</h3>
                   <ul className="space-y-2">
-                    <li><a className="hover:text-slate-600" href=".#">Home</a></li>
-                    <li><a className="hover:text-slate-600" href="/roupas">Roupas</a></li>
-                    <li><a className="hover:text-slate-600" href="/calcados">Calçados</a></li>
-                    <li><a className="hover:text-slate-600" href="/acessorios">Acessorios</a></li>
-                  </ul>
+                    <li><FooterItem href=".#" children="Home"/></li>
+                    <li><FooterItem href=".#" children="Roupas"/></li>
+                    <li><FooterItem href=".#" children="Calçados"/></li>
+                    <li><FooterItem href=".#" children="Acessorios"/></li>
+                   </ul>
             </div>
 
               <div>
                 <h3 className="ml-1 text-lg font-semibold mb-4">Nossas Redes</h3>
                 <ul className="flex gap-1">
-                  <li><a className="hover:text-slate-600" href="#"><Facebook/></a></li>
-                  <li><a className="hover:text-slate-600" href="#"><Instagram/></a></li>
-                  <li><a className="hover:text-slate-600" href="#"><Twitter/></a></li>
-                </ul>
+                <li><FooterItem href=".#" children={<Facebook/>}/></li>
+                <li><FooterItem href=".#" children={<Instagram/>}/></li>
+                <li><FooterItem href=".#" children={<Twitter/>}/></li>
+               </ul>
               </div>
 
               <div>
@@ -43,8 +44,8 @@ const Footer = () => {
               </div>
           </div>
 
-            <div className="mt-8 border-t border-gray-600 pt-4">
-              <p className="text-sm text-gray-500">&copy; 2023 @sauloviniciust. All rights reserved.</p>
+            <div className="mt-8 border-t border-zinc-600 pt-4">
+              <p className="text-sm text-zinc-500">&copy; 2023 @sauloviniciust. All rights reserved.</p>
             </div>
         </div>
       </footer>
