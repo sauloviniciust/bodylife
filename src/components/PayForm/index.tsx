@@ -5,9 +5,21 @@ import { db } from "../../firebase/config";
 import { Buyer } from "../../interface/Buyer";
 import { useState } from "react";
 
-const PayForm = (items: object, total: string, totalItems: number) => {
+interface PayFormProps {
+  items: object;
+  total: string;
+  totalItems: number;
+}
+
+const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
   const { buyer, setBuyer } = useBuyer();
-  const [formData, setFormData] = useState<Buyer>();
+  const [formData, setFormData] = useState<Buyer>({
+    name: '',
+    email: '',
+    phone: 0,
+    message: '',
+    method: '',
+  });
   const ordersCollection = collection(db, "orders");
   const order = {
     buyer,
@@ -16,8 +28,8 @@ const PayForm = (items: object, total: string, totalItems: number) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setBuyer(formData);
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    
   };
 
 

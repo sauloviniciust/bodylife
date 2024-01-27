@@ -3,5 +3,5 @@ export interface Buyer {
   email: string;
   name: string;
   message: string;
-  method: number;
+  method: string;
 }
