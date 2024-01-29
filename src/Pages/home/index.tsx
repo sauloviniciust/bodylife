@@ -1,7 +1,7 @@
 import { Hero } from "../../components/Hero"
 import { Main } from "../../components/Main"
 
- const Home = () => {
+export const Home = () => {
     return(
     <>
     <Hero/>
@@ -9,5 +9,3 @@ import { Main } from "../../components/Main"
     </>
     )
 }
-
-export { Home }
