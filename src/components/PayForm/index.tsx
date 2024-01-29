@@ -53,7 +53,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
 
   return (
     <section className="rounded-3xl container mx-auto" id="pay-form">
-      <article className="bg-zinc-950 text-zinc-300 shadow-2xl border-zinc-900 border-4 rounded-3xl">
+      <article className="bg-zinc-900 text-zinc-300 shadow-2xl border-zinc-900 border-4 rounded-3xl">
         <div className="p-6 shadow-2xl">
           <h3 className="text-3xl sm:text-5xl font-bold  mb-10">
             Informações de pagamento
@@ -79,7 +79,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
                   placeholder="Digite seu nome completo..."
                   onChange={handleChange}
                   required
-                  className="mb-8 w-full text-zinc-300 focus:outline-none px-4 py-2 bg-black rounded-lg"
+                  className="mb-8 w-full text-zinc-300 focus:outline-none px-4 py-2 bg-zinc-800 rounded-lg"
                 />
               </div>
               <div>
@@ -92,7 +92,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
                   placeholder="Digite seu email..."
                   onChange={handleChange}
                   required
-                  className="w-full text-zinc-300 focus:outline-none px-4 py-2 rounded-lg bg-black "
+                  className="w-full text-zinc-300 focus:outline-none px-4 py-2 rounded-lg bg-zinc-800 "
                 />
               </div>
             </div>
@@ -106,7 +106,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
                 placeholder="Insira o numero do seu telefone"
                 onChange={handleChange}
                 required
-                className="w-full text-zinc-300 focus:outline-none font-lighter px-4  py-2 rounded-lg bg-black "
+                className="w-full text-zinc-300 focus:outline-none font-lighter px-4  py-2 rounded-lg bg-zinc-800 "
               />
             </div>
             <div>
@@ -118,7 +118,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
                 placeholder="Deixe sua mensagem e endereço aqui..."
                 onChange={handleChange}
                 required
-                className="w-full text-zinc-300 focus:outline-none px-4  py-2 rounded-lg bg-black "
+                className="w-full text-zinc-300 focus:outline-none px-4  py-2 rounded-lg bg-zinc-800 "
               ></textarea>
             </div>
             <div>
@@ -129,7 +129,7 @@ const PayForm: React.FC<PayFormProps> = ({ items, total, totalItems }) => {
                 <select
                   name="method"
                   onChange={handleChange}
-                  className="bg-black block w-full rounded-md border-0 py-1.5 
+                  className="bg-zinc-800 block w-full rounded-md border-0 py-1.5 
 				text-zinc-300 shadow-sm ring-1 ring-inset ring-zinc-500 focus:ring-2 
 				focus:ring-inset focus:ring-zinc-300 sm:max-w-xs sm:text-sm sm:leading-6"
                 >

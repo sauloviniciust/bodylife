@@ -5,7 +5,6 @@ import { Product } from "../../interface/Product";
 interface ItemState {
   isLoading: boolean;
 }
-
 class Item extends Component<Product, ItemState> {
   constructor(props: Product) {
     super(props);

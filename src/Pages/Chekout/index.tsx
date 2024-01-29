@@ -16,7 +16,7 @@ const Checkout = () => {
   return (
     <div className="container mx-auto my-56 p-4">
       <div className="grid grid-cols-1 gap-4">
-        <div className="bg-zinc-950 p-4 rounded-lg shadow-md">
+        <div className="bg-zinc-900 p-4 rounded-lg shadow-md">
           <h2 className="text-2xl text-zinc-300 font-semibold mb-4">
             Finalizar Compra
           </h2>

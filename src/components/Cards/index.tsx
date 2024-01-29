@@ -7,6 +7,8 @@ export const Card = () => {
     state.availableItems,
     state.addToCart,
   ]);
+
+ 
   return (
     <>
       {items.map((item) => (
@@ -15,12 +17,11 @@ export const Card = () => {
           className="bg-zinc-700 rounded-lg shadow-black hover:bg-zinc-800 
           border-zinc-600 scale-75 md:scale-90 lg:scale-90 xl:scale-100 
           transition overflow-hidden ease-in-out delay-100 text-center 
-          z-10 transform hover:scale-105 border-2 shadow-2xl"
-        >
+          z-10 transform hover:scale-105 border-2 shadow-2xl" >
           <>
             <Link
               to={`/item?
-                      src=${item.src}
+                      &src=${item.src}
                       &product=${item.product}
                       &about=${item.about}
                       &price=${item.price}

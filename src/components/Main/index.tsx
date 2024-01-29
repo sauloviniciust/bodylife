@@ -5,11 +5,9 @@ import { useData } from "../../Context/DataContext";
 
 const Main = () => {
   const { product } = useData();
-
-  console.log(product);
-
   const [isLoading, setIsLoading] = useState(true);
-
+  console.log(product);
+ 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsLoading(false);
@@ -21,7 +19,7 @@ const Main = () => {
   }, []);
 
   return (
-    <section className="bg-zinc-800 py-12 mt-14">
+    <section className=" py-12 mt-14">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-zinc-200 mb-6"></h2>
         {isLoading ? (
