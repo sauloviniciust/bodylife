@@ -6,12 +6,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ItemPage } from "./components/Item/index.tsx";
 import { MenuMoba } from "./Pages/Mobile/index.tsx";
 import { Loading } from "./components/Loading/index.tsx";
-import { Home } from "./Pages/Home/index.tsx";
 import { Cart } from "./Pages/Cart/index.tsx";
 import Checkout from "./Pages/Chekout/index.tsx";
 import { DataProvider } from "./Context/DataContext.tsx";
 import { useCartStore } from "./store/CartStore.ts";
 import { BuyerProvider } from "./Context/BuyerContext.tsx";
+import { Home } from "./Pages/Home/index.tsx";
 
 useCartStore.subscribe((Item) => console.log("New State", Item));
 
