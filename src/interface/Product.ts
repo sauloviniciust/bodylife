@@ -1,11 +1,11 @@
 export interface Product {
-    quantity: number;
-    id: string;
-    product: string;
-    about: string;
-    price: number;
-    src: string;
-    alt: string;
-    item: string;
-    units: number;
+  about: string;
+  alt: string;
+  id: string;
+  item: string;
+  price: number;
+  product: string;
+  src: string;
+  units: number;
+  quantity: number;
   }

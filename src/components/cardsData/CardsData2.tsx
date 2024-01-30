@@ -2,6 +2,7 @@
 // import { useEffect } from "react";
 // import { db } from "../../firebase/config";
 // import { useData } from "../../Context/DataContext";
+// import { Product } from "../../interface/Product";
 
 // const CardsData2 = () => {
 //   const { setProduct } = useData();
@@ -13,10 +14,14 @@
 //         const snapshot = await getDocs(itemsCollection);
 
 //         const items = snapshot.docs.map((data) => ({
-//           id: data.id,
-//           ...data.data(),
+            
+//             ...(data.data() as Product),
 //         }));
-//         setProduct(items);
+        
+   
+//             setProduct(items);
+        
+          
 //       } catch (error) {
 //         console.error("Error fetching data from Firestore:", error);
 //       }
@@ -26,7 +31,9 @@
 //   }, [setProduct]);
 
   
- 
+//   return (
+//    <></>
+//   )
 // };
 
 // export { CardsData2 };

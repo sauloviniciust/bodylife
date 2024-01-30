@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Card } from "../Cards";
 import { Loading } from "./../Loading";
-import { useData } from "../../Context/DataContext";
+// import { useData } from "../../Context/DataContext";
+// import { CardsData2 } from "../cardsData/CardsData2";
 
 const Main = () => {
-  const { product } = useData();
+  // const { product } = useData();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(product);
+  
+  // console.log(product);
  
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -30,6 +32,7 @@ const Main = () => {
           </div>
         )}
       </div>
+      {/* <CardsData2/> */}
     </section>
   );
 };
